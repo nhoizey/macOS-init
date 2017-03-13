@@ -7,7 +7,44 @@
 # https://github.com/nicolinuxfr/macOS-post-installation
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
-## La base : Homebrew et les lignes de commande
+## QUELQUES FONCTIONS UTILES
+
+# Installation d'apps avec Homebrew
+function installWithBrew () {
+  for arg in "$@"; do
+    # Check if the App is already installed
+    brew list | grep -i "$arg" > /dev/null
+    if [ "$?" != 0 ]; then
+      echo "- Installation de $arg..."
+      brew install "$arg"
+    fi
+  done
+}
+
+# Installation d'apps avec Homebrew Cask
+function installWithBrewCask () {
+  for arg in "$@"; do
+    # Check if the App is already installed
+    brew cask list | grep -i "$arg" > /dev/null
+    if [ "$?" != 0 ]; then
+      echo "- Installation de $arg..."
+      brew cask install "$arg"
+    fi
+  done
+}
+
+# Installation d'apps avec mas
+# Source : https://github.com/argon/mas/issues/41#issuecomment-245846651
+function installWithMAS () {
+  # Check if the App is already installed
+  mas list | grep -i "$1" > /dev/null
+  if [ "$?" != 0 ]; then
+    echo "- Installation de $1..."
+    mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
+  fi
+}
+
+## LA BASE : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
   echo 'Installation de Homebrew'
@@ -19,79 +56,64 @@ brew update
 
 ## Utilitaires pour les autres apps : Cask et mas (Mac App Store)
 echo 'Installation de mas, pour installer les apps du Mac App Store.'
-brew install mas
+installWithBrew mas
 echo "Saisir le mail du compte iTunes :"
 read COMPTE
 echo "Saisir le mot de passe du compte : $COMPTE"
 read -s PASSWORD
 mas signin $COMPTE "$PASSWORD"
 
-# Installation d'apps avec mas
-# Source : https://github.com/argon/mas/issues/41#issuecomment-245846651
-function install () {
-  # Check if the App is already installed
-  mas list | grep -i "$1" > /dev/null
-
-  if [ "$?" == 0 ]; then
-    # echo "==> $1 est déjà installée"
-  else
-    echo "==> Installation de $1..."
-    mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
-  fi
-}
-
 echo 'Installation de Cask, pour installer les autres apps.'
 brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils système.'
-brew install dnsmasq
+installWithBrew dnsmasq
 
 echo 'Installation des outils en ligne de commande.'
-brew install wget ffmpeg joe youtube-dl
+installWithBrew wget ffmpeg joe youtube-dl
 
-echo 'Installation des apps : utilitaires.'
-brew cask install appdelete appshelf bartender carbon-copy-cloner coconutbattery controlplane crashplan disk-inventory-x dropbox duet google-drive grandperspective licecap macid qlmarkdown quicklook-csv quicklook-json rcdefaultapp rightzoom screenflow yemuzip
-install "1Password"
-install "Amphetamine"
-install "AutoMute"
-install "BetterSnapTool"
-install "Renamer"
-install "Sip"
-install "Screeny"
-install "Silent Start"
-install "Skitch"
-install "The Unarchiver"
-install "UBSMate"
+echo 'Installation des apps utilitaires.'
+installWithBrewCask appdelete appshelf bartender carbon-copy-cloner coconutbattery controlplane crashplan disk-inventory-x dropbox duet google-drive grandperspective licecap macid qlmarkdown quicklook-csv quicklook-json rcdefaultapp rightzoom screenflow yemuzip
+installWithMAS "1Password"
+installWithMAS "Amphetamine"
+installWithMAS "AutoMute"
+installWithMAS "BetterSnapTool"
+installWithMAS "Renamer"
+installWithMAS "Sip"
+installWithMAS "Screeny"
+installWithMAS "Silent Start"
+installWithMAS "Skitch"
+installWithMAS "The Unarchiver"
 
 echo "Ouverture de Google Drive pour commencer la synchronisation"
 open -a Google\ Drive
 
-echo 'Installation des apps : bureautique.'
-install "Evernote"
-install "ReadKit"
+echo 'Installation des apps de bureautique.'
+installWithMAS "Evernote"
+installWithMAS "ReadKit"
 
-echo 'Installation des apps : développement.'
-brew cask install iterm2 ghostlab github-desktop reflector sequel-pro virtualbox virtualbox-extension-pack
+echo 'Installation des apps de développement.'
+installWithBrewCask iterm2 ghostlab github-desktop reflector sequel-pro virtualbox virtualbox-extension-pack
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 brew tap caskroom/fonts
-brew cask install font-fira-code
-install "Xcode"
-install "ForkLift"
+installWithBrewCask font-fira-code
+installWithMAS "Xcode"
+installWithMAS "ForkLift"
 
-echo 'Installation des apps : communication.'
-install "Tweetbot"
-install "Slack"
-install "Opera"
-brew cask install colloquy firefox google-chrome skype transmission
+echo 'Installation des apps de communication.'
+installWithMAS "Tweetbot"
+installWithMAS "Slack"
+installWithMAS "Opera"
+installWithBrewCask colloquy firefox google-chrome skype transmission
 
-echo 'Installation des apps : photo, vidéo et loisirs.'
-brew cask install catch handbrake logitech-harmony spotify steam subler subsmarine vlc
-install "Boxy SVG"
-install "gps4cam"
-install "GIF Brewery"
-install "iFlicks 2"
-install "I Love Stars"
+echo 'Installation des apps de photo, vidéo et loisirs.'
+installWithBrewCask catch handbrake caskroom/versions/java6 logitech-harmony spotify steam subler subsmarine vlc
+installWithMAS "Boxy SVG"
+installWithMAS "gps4cam"
+installWithMAS "GIF Brewery"
+installWithMAS "iFlicks 2"
+installWithMAS "I Love Stars"
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
@@ -133,7 +155,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 # Sauvegarde sur disque (et non sur iCloud) par défaut
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Coup d'œîl : sélection de texte
+# Coup d'œil : sélection de texte
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Ne pas alerter en cas de modification de l'extension d'un fichier
@@ -206,7 +228,7 @@ sudo defaults write NSGlobalDomain KeyRepeat -int 1
 # Délai avant répétition des touches
 sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-# Réglages Trackpad : toucher pour cliquer
+# Trackpad : toucher pour cliquer
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
@@ -234,9 +256,6 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ## SONS
 
-# Améliore la qualité sonore pour les casques Bluetooth
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
 # Alertes sonores quand on modifie le volume
 sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 
@@ -257,5 +276,6 @@ echo "Derniers nettoyages…"
 brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
 
+echo ""
 echo "ET VOILÀ !"
 echo "Après synchronisation des données cloud (Dropbox, Google Drive, iCloud), lancer le script post-cloud.sh"
