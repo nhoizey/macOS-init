@@ -3,11 +3,15 @@
 ## README
 # /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
 
+# Sources :
+# https://github.com/nicolinuxfr/macOS-post-installation
+# https://github.com/OzzyCzech/dotfiles/blob/master/.osx
+
 ## La base : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
-	echo 'Installation de Homebrew'
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo 'Installation de Homebrew'
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Vérifier que tout est bien à jour
@@ -16,99 +20,78 @@ brew update
 ## Utilitaires pour les autres apps : Cask et mas (Mac App Store)
 echo 'Installation de mas, pour installer les apps du Mac App Store.'
 brew install mas
-echo "Saisir le mail du compte iTunes :" 
+echo "Saisir le mail du compte iTunes :"
 read COMPTE
 echo "Saisir le mot de passe du compte : $COMPTE"
 read -s PASSWORD
 mas signin $COMPTE "$PASSWORD"
 
-# Installation d'apps avec mas (source : https://github.com/argon/mas/issues/41#issuecomment-245846651)
+# Installation d'apps avec mas
+# Source : https://github.com/argon/mas/issues/41#issuecomment-245846651
 function install () {
-	# Check if the App is already installed
-	mas list | grep -i "$1" > /dev/null
+  # Check if the App is already installed
+  mas list | grep -i "$1" > /dev/null
 
-	if [ "$?" == 0 ]; then
-		echo "==> $1 est déjà installée"
-	else
-		echo "==> Installation de $1..."
-		mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
-	fi
+  if [ "$?" == 0 ]; then
+    # echo "==> $1 est déjà installée"
+  else
+    echo "==> Installation de $1..."
+    mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
+  fi
 }
 
 echo 'Installation de Cask, pour installer les autres apps.'
 brew tap caskroom/cask
 
 ## Installations des logiciels
+echo 'Installation des outils système.'
+brew install dnsmasq
+
 echo 'Installation des outils en ligne de commande.'
-brew install wget cmake coreutils psutils git ffmpeg node libssh
-brew tap zyedidia/micro
-brew install micro
-gem install sass
+brew install wget ffmpeg joe youtube-dl
 
 echo 'Installation des apps : utilitaires.'
-brew cask install alfred sizeup typinator istat-menus google-drive seafile-client flux appcleaner backblaze hosts carbon-copy-cloner aerial
-install "FastScripts"
-install "PopClip"
+brew cask install appdelete appshelf bartender carbon-copy-cloner coconutbattery controlplane crashplan disk-inventory-x dropbox duet google-drive grandperspective licecap macid qlmarkdown quicklook-csv quicklook-json rcdefaultapp rightzoom screenflow yemuzip
+install "1Password"
 install "Amphetamine"
-install "MacTracker"
+install "AutoMute"
+install "BetterSnapTool"
+install "Renamer"
+install "Sip"
+install "Screeny"
+install "Silent Start"
+install "Skitch"
+install "The Unarchiver"
+install "UBSMate"
 
 echo "Ouverture de Google Drive pour commencer la synchronisation"
 open -a Google\ Drive
 
-# Installation manuelle de SearchLink
-cd /tmp/ && curl -O http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
-
 echo 'Installation des apps : bureautique.'
-install "iA Writer"
-install "Ulysses"
-install "Marked"
-install "Pages"
-install "Keynote"
-install "Numbers"
-install "Soulver"
-install "Simplenote"
-brew cask install evernote
+install "Evernote"
+install "ReadKit"
 
 echo 'Installation des apps : développement.'
-brew install hugo
-brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit
+brew cask install iterm2 ghostlab github-desktop reflector sequel-pro virtualbox virtualbox-extension-pack
+# https://github.com/tonsky/FiraCode/wiki#installing-font
+brew tap caskroom/fonts
+brew cask install font-fira-code
 install "Xcode"
-install "TextWrangler"
-install "Quiver"
-install "JSON Helper for AppleScript"
-install "Twitter Scripter"
-
+install "ForkLift"
 
 echo 'Installation des apps : communication.'
-install "Reeder"
-install "Twitter"
 install "Tweetbot"
-install "1Password"
-install "Wunderlist"
-brew cask install google-chrome firefox mattermost transmission
+install "Slack"
+install "Opera"
+brew cask install colloquy firefox google-chrome skype transmission
 
-
-echo 'Installation des apps : photo et vidéo.'
-brew cask install handbrake handbrakecli imageoptim sketch google-photos-backup qlimagesize
-install "Acorn"
-install "Pixelmator"
-install "JPEG Mini"
-install "Napkin"
-install "Precise Screenshot"
-install "Final Cut Pro"
-install "Logic Pro X"
-install "Motion"
-
-
-echo 'Installation des apps : loisir.'
-brew install mpv --with-bundle
-brew linkapps mpv # Pour avoir un .app dans le dossier des Applications
-install "TunesArt"
-brew cask install vox xld beardedspice
-
-# DockArt (installation manuelle, faute de mieux)
-cd /tmp/ && curl -O http://www.splook.com/Software/DockArt_files/DockArt2.zip && unzip DockArt2.zip && cd DockArt\ 2.2 && mv DockArt.bundle ~/Library/iTunes/iTunes\ Plug-ins
-
+echo 'Installation des apps : photo, vidéo et loisirs.'
+brew cask install catch handbrake logitech-harmony spotify steam subler subsmarine vlc
+install "Boxy SVG"
+install "gps4cam"
+install "GIF Brewery"
+install "iFlicks 2"
+install "I Love Stars"
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
@@ -116,12 +99,22 @@ echo "Configuration de quelques paramètres par défaut…"
 ## FINDER
 
 # Affichage de la bibliothèque
-chflags nohidden ~/Library
+# chflags nohidden ~/Library
 
-# Finder : affichage de la barre latérale / affichage par défaut en mode liste / affichage chemin accès / extensions toujours affichées
+# Affichage de la barre latérale
 defaults write com.apple.finder ShowStatusBar -bool true
-defaults write com.apple.finder FXPreferredViewStyle -string “Nlsv”
+
+# Afficher par défaut en mode colonne
+# Flwv ▸ Cover Flow View
+# Nlsv ▸ List View
+# clmv ▸ Column View
+# icnv ▸ Icon View
+defaults write com.apple.finder FXPreferredViewStyle -string “clmv”
+
+# Afficher le chemin d'accès
 defaults write com.apple.finder ShowPathbar -bool true
+
+# Affichage de toutes les extensions
 sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Afficher le dossier maison par défaut
@@ -131,15 +124,30 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 # Recherche dans le dossier en cours par défaut
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Fenêtre de sauvegarde complète par défaut
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Fenêtre d'impression complète par défaut
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Sauvegarde sur disque (et non sur iCloud) par défaut
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 # Coup d'œîl : sélection de texte
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Pas de création de fichiers .DS_STORE
+# Ne pas alerter en cas de modification de l'extension d'un fichier
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Pas de création de fichiers .DS_STORE sur les disques réseau et externes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Supprimer l'alerte de quarantaine des applications
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-## RÉGLAGES DOCK
+## DOCK
+
 # Taille du texte au minimum
 defaults write com.apple.dock tilesize -int 15
 # Agrandissement actif
@@ -148,6 +156,7 @@ defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -float 128
 
 ## MISSION CONTROL
+
 # Pas d'organisation des bureaux en fonction des apps ouvertes
 defaults write com.apple.dock mru-spaces -bool false
 
@@ -156,18 +165,33 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 ## COINS ACTIFS
+
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
 # En haut à gauche : bureau
-defaults write com.apple.dock wvous-tl-corner -int 4
-defaults write com.apple.dock wvous-tl-modifier -int 0
-# En haut à droite : bureau
-defaults write com.apple.dock wvous-tr-corner -int 4
+# defaults write com.apple.dock wvous-tl-corner -int 4
+# defaults write com.apple.dock wvous-tl-modifier -int 0
+
+# En haut à droite : screensaver
+defaults write com.apple.dock wvous-tr-corner -int 5
 defaults write com.apple.dock wvous-tr-modifier -int 0
+
 # En bas à gauche : fenêtres de l'application
-defaults write com.apple.dock wvous-bl-corner -int 3
-defaults write com.apple.dock wvous-bl-modifier -int 0
+# defaults write com.apple.dock wvous-bl-corner -int 3
+# defaults write com.apple.dock wvous-bl-modifier -int 0
+
 # En bas à droite : Mission Control
-defaults write com.apple.dock wvous-br-corner -int 2
-defaults write com.apple.dock wvous-br-modifier -int 0
+# defaults write com.apple.dock wvous-br-corner -int 2
+# defaults write com.apple.dock wvous-br-modifier -int 0
 
 ## CLAVIER ET TRACKPAD
 
@@ -182,15 +206,14 @@ sudo defaults write NSGlobalDomain KeyRepeat -int 1
 # Délai avant répétition des touches
 sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-# Alertes sonores quand on modifie le volume
-sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
-
 # Réglages Trackpad : toucher pour cliquer
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-
 ## APPS
+
+# Vérifier la disponibilité de mise à jour quotidiennement
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Safari : menu développeur / URL en bas à gauche / URL complète en haut / Do Not Track / affichage barre favoris
 defaults write com.apple.safari IncludeDevelopMenu -int 1
@@ -205,8 +228,25 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 # TextEdit : .txt par défaut
 defaults write com.apple.TextEdit RichText -int 0
 
-# Raccourci pour exporter 
-sudo defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
+# TextEdit : ouvre et enregistre les fichiers en UTF-8
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+
+## SONS
+
+# Améliore la qualité sonore pour les casques Bluetooth
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Alertes sonores quand on modifie le volume
+sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
+
+## IMAGES
+
+# Enregistrer les screenshots en PNG (autres options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+
+# Ne pas mettre d'ombre sur les screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
@@ -218,4 +258,4 @@ brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
 
 echo "ET VOILÀ !"
-echo "Après synchronisation des données cloud, lancer le script post-cloud.sh"
+echo "Après synchronisation des données cloud (Dropbox, Google Drive, iCloud), lancer le script post-cloud.sh"
