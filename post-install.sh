@@ -86,8 +86,8 @@ installWithMAS "Silent Start"
 installWithMAS "Skitch"
 installWithMAS "The Unarchiver"
 
-echo "Ouverture de Google Drive pour commencer la synchronisation"
-open -a Google\ Drive
+echo "Ouverture de Dropbox pour commencer la synchronisation"
+open -a Dropbox
 
 echo 'Installation des apps de bureautique.'
 installWithMAS "Evernote"

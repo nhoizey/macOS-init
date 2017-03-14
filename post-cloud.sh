@@ -5,7 +5,7 @@
 
 echo "Installation de mackup et restauration des préférences."
 brew install mackup
-# Sélection du service de cloud (à commenter si vous utilisez Dropbox, c'est le service par défaut) : https://github.com/lra/mackup/blob/master/doc/README.md
+# Sélection du service de cloud (à décommenter si vous n'utilisez pas Dropbox, c'est le service par défaut) : https://github.com/lra/mackup/blob/master/doc/README.md
 # echo -e "[storage]\nengine = google_drive" >> ~/.mackup.cfg
 
 # Récupération de la sauvegarde sans demander à chaque fois l'autorisation
