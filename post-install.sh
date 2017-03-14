@@ -244,6 +244,9 @@ defaults write com.apple.safari ShowFullURLInSmartSearchField -int 1
 defaults write com.apple.safari SendDoNotTrackHTTPHeader -int 1
 defaults write com.apple.Safari ShowFavoritesBar -bool true
 
+# Chrome : désactiver la navigation dans l'historique au swipe
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 # Photos : pas d'affichage pour les iPhone
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 
