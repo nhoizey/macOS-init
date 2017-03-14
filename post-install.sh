@@ -119,6 +119,7 @@ installWithBrewCask colloquy firefox google-chrome rambox skype
 echo 'Installation des apps de photo, vidéo et loisirs.'
 installWithBrewCask catch handbrake caskroom/versions/java6 logitech-harmony spotify steam subler subsmarine transmission vlc
 installWithMAS "Boxy SVG"
+installWithMAS "Export for iTunes"
 installWithMAS "gps4cam"
 installWithMAS "GIF Brewery"
 installWithMAS "iFlicks 2"
