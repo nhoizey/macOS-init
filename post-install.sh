@@ -5,6 +5,7 @@
 
 # Sources :
 # https://github.com/nicolinuxfr/macOS-post-installation
+# https://www.macg.co/logiciels/2017/02/comment-synchroniser-les-preferences-des-apps-avec-mackup-97442
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
 ## QUELQUES FONCTIONS UTILES
@@ -90,6 +91,7 @@ echo "Ouverture de Dropbox pour commencer la synchronisation"
 open -a Dropbox
 
 echo 'Installation des apps de bureautique.'
+installWithBrewCask macdown
 installWithMAS "Evernote"
 installWithMAS "ReadKit"
 
@@ -105,10 +107,10 @@ echo 'Installation des apps de communication.'
 installWithMAS "Tweetbot"
 installWithMAS "Slack"
 installWithMAS "Opera"
-installWithBrewCask colloquy firefox google-chrome skype transmission
+installWithBrewCask colloquy firefox google-chrome rambox skype
 
 echo 'Installation des apps de photo, vidéo et loisirs.'
-installWithBrewCask catch handbrake caskroom/versions/java6 logitech-harmony spotify steam subler subsmarine vlc
+installWithBrewCask catch handbrake caskroom/versions/java6 logitech-harmony spotify steam subler subsmarine transmission vlc
 installWithMAS "Boxy SVG"
 installWithMAS "gps4cam"
 installWithMAS "GIF Brewery"
@@ -170,8 +172,8 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 ## DOCK
 
-# Taille du texte au minimum
-defaults write com.apple.dock tilesize -int 15
+# Taille minimum
+defaults write com.apple.dock tilesize -int 32
 # Agrandissement actif
 defaults write com.apple.dock magnification -bool true
 # Taille maximale pour l'agrandissement
