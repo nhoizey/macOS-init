@@ -87,6 +87,13 @@ installWithMAS "Silent Start"
 installWithMAS "Skitch"
 installWithMAS "The Unarchiver"
 
+# installation en spécifique de TigerVPN
+curl -s -L -o $HOME/Downloads/tigerVPN.dmg "https://apps-tigervpn.netdna-ssl.com/mac/tigerVPN_1_1.dmg"
+hdiutil attach -quiet $HOME/Downloads/tigerVPN.dmg
+ditto -rsrc "/Volumes/tigerVPN/tigerVPN.app" /Applications/tigerVPN.app
+hdiutil detach "/Volumes/tigerVPN"
+rm -f $HOME/Downloads/tigerVPN.dmg
+
 echo "Ouverture de Dropbox pour commencer la synchronisation"
 open -a Dropbox
 
