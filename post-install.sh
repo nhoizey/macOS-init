@@ -298,6 +298,7 @@ killall Dock
 killall Finder
 
 echo "Derniers nettoyages…"
+brew cask cleanup
 brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
 
