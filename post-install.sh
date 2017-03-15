@@ -54,6 +54,7 @@ fi
 
 # Vérifier que tout est bien à jour
 brew update
+brew upgrade
 
 ## Utilitaires pour les autres apps : Cask et mas (Mac App Store)
 echo 'Installation de mas, pour installer les apps du Mac App Store.'
