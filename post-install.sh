@@ -134,6 +134,8 @@ installWithMAS "gps4cam"
 installWithMAS "GIF Brewery"
 installWithMAS "iFlicks 2"
 installWithMAS "I Love Stars"
+# Ajout des binaires Homebrew au PATH
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
