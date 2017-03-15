@@ -8,43 +8,6 @@
 # https://www.macg.co/logiciels/2017/02/comment-synchroniser-les-preferences-des-apps-avec-mackup-97442
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
-## QUELQUES FONCTIONS UTILES
-
-# Installation d'apps avec Homebrew
-function installWithBrew () {
-  for arg in "$@"; do
-    # Check if the App is already installed
-    brew list | grep -i "$arg" > /dev/null
-    if [ "$?" != 0 ]; then
-      echo "- Installation de $arg..."
-      brew install "$arg"
-    fi
-  done
-}
-
-# Installation d'apps avec Homebrew Cask
-function installWithBrewCask () {
-  for arg in "$@"; do
-    # Check if the App is already installed
-    brew cask list | grep -i "$arg" > /dev/null
-    if [ "$?" != 0 ]; then
-      echo "- Installation de $arg..."
-      brew cask install "$arg"
-    fi
-  done
-}
-
-# Installation d'apps avec mas
-# Source : https://github.com/argon/mas/issues/41#issuecomment-245846651
-function installWithMAS () {
-  # Check if the App is already installed
-  mas list | grep -i "$1" > /dev/null
-  if [ "$?" != 0 ]; then
-    echo "- Installation de $1..."
-    mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
-  fi
-}
-
 ## LA BASE : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
@@ -52,41 +15,15 @@ then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Vérifier que tout est bien à jour
+# Mettre à jour la liste des applications disponibles
 brew update
-brew upgrade
 
-## Utilitaires pour les autres apps : Cask et mas (Mac App Store)
-echo 'Installation de mas, pour installer les apps du Mac App Store.'
-installWithBrew mas
-echo "Saisir le mail du compte iTunes :"
-read COMPTE
-echo "Saisir le mot de passe du compte : $COMPTE"
-read -s PASSWORD
-mas signin $COMPTE "$PASSWORD"
+# Installer les nouvelles applications du bundle Brewfile
+# et mettre à jour celles déjà présentes
+brew bundle
 
-echo 'Installation de Cask, pour installer les autres apps.'
-brew tap caskroom/cask
-
-## Installations des logiciels
-echo 'Installation des outils système.'
-installWithBrew dnsmasq
-
-echo 'Installation des outils en ligne de commande.'
-installWithBrew autojump wget ffmpeg joe youtube-dl
-
-echo 'Installation des apps utilitaires.'
-installWithBrewCask appdelete appshelf bartender carbon-copy-cloner coconutbattery controlplane crashplan disk-inventory-x dropbox duet google-drive grandperspective licecap macid qlmarkdown quicklook-csv quicklook-json rcdefaultapp rightzoom screenflow yemuzip
-installWithMAS "1Password"
-installWithMAS "Amphetamine"
-installWithMAS "AutoMute"
-installWithMAS "BetterSnapTool"
-installWithMAS "Renamer"
-installWithMAS "Sip"
-installWithMAS "Screeny"
-installWithMAS "Silent Start"
-installWithMAS "Skitch"
-installWithMAS "The Unarchiver"
+echo "Ouverture de Dropbox pour commencer la synchronisation"
+open -a Dropbox
 
 # installation en spécifique de TigerVPN
 if [ ! -e "/Applications/tigerVPN.app" ]; then
@@ -97,21 +34,6 @@ if [ ! -e "/Applications/tigerVPN.app" ]; then
   rm -f $HOME/Downloads/tigerVPN.dmg
 fi
 
-echo "Ouverture de Dropbox pour commencer la synchronisation"
-open -a Dropbox
-
-echo 'Installation des apps de bureautique.'
-installWithBrewCask macdown
-installWithMAS "Evernote"
-installWithMAS "ReadKit"
-
-echo 'Installation des apps de développement.'
-installWithBrewCask iterm2 ghostlab github-desktop reflector sequel-pro virtualbox virtualbox-extension-pack
-# https://github.com/tonsky/FiraCode/wiki#installing-font
-brew tap caskroom/fonts
-installWithBrewCask font-fira-code
-installWithMAS "Xcode"
-installWithMAS "ForkLift"
 # installation en spécifique de Reflector v1
 if [ ! -e "/Applications/Reflector.app" ]; then
   curl -s -L -o $HOME/Downloads/Reflector.dmg "http://download.airsquirrels.com/Reflector/Mac/Reflector.dmg"
@@ -122,28 +44,11 @@ if [ ! -e "/Applications/Reflector.app" ]; then
 fi
 
 echo 'Installation des apps de développement pour Jekyll.'
-installWithBrew gsl imagemagick pkg-config
-# Mise à jour de Ruby
-installWithBrew ruby
 # Mise à jour de RubyGems
 sudo gem update --system --silent
 # Installation de Bundler
 sudo gem install bundler
 
-echo 'Installation des apps de communication.'
-installWithMAS "Tweetbot"
-installWithMAS "Slack"
-installWithMAS "Opera"
-installWithBrewCask colloquy firefox google-chrome rambox skype
-
-echo 'Installation des apps de photo, vidéo et loisirs.'
-installWithBrewCask catch handbrake caskroom/versions/java6 logitech-harmony molotov spotify steam subler subsmarine transmission vlc
-installWithMAS "Boxy SVG"
-installWithMAS "Export for iTunes"
-installWithMAS "gps4cam"
-installWithMAS "GIF Brewery"
-installWithMAS "iFlicks 2"
-installWithMAS "I Love Stars"
 # Ajout des binaires Homebrew au PATH
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
