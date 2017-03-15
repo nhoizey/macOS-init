@@ -112,6 +112,14 @@ brew tap caskroom/fonts
 installWithBrewCask font-fira-code
 installWithMAS "Xcode"
 installWithMAS "ForkLift"
+# installation en spécifique de Reflector v1
+if [ ! -e "/Applications/Reflector.app" ]; then
+  curl -s -L -o $HOME/Downloads/Reflector.dmg "http://download.airsquirrels.com/Reflector/Mac/Reflector.dmg"
+  hdiutil attach -quiet $HOME/Downloads/Reflector.dmg
+  ditto -rsrc "/Volumes/Reflector/Reflector.app" /Applications/Reflector.app
+  hdiutil detach "/Volumes/Reflector"
+  rm -f $HOME/Downloads/Reflector.dmg
+fi
 
 echo 'Installation des apps de développement pour Jekyll.'
 installWithBrew gsl imagemagick pkg-config
