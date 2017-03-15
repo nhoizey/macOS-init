@@ -3,8 +3,7 @@
 ## README
 # /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
 
-echo "Installation de mackup et restauration des préférences."
-brew install mackup
+echo "Restauration des préférences."
 # Sélection du service de cloud (à décommenter si vous n'utilisez pas Dropbox, c'est le service par défaut) : https://github.com/lra/mackup/blob/master/doc/README.md
 # echo -e "[storage]\nengine = google_drive" >> ~/.mackup.cfg
 
