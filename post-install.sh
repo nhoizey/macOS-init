@@ -72,7 +72,7 @@ echo 'Installation des outils système.'
 installWithBrew dnsmasq
 
 echo 'Installation des outils en ligne de commande.'
-installWithBrew wget ffmpeg joe youtube-dl
+installWithBrew autojump wget ffmpeg joe youtube-dl
 
 echo 'Installation des apps utilitaires.'
 installWithBrewCask appdelete appshelf bartender carbon-copy-cloner coconutbattery controlplane crashplan disk-inventory-x dropbox duet google-drive grandperspective licecap macid qlmarkdown quicklook-csv quicklook-json rcdefaultapp rightzoom screenflow yemuzip
