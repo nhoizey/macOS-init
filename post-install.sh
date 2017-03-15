@@ -110,6 +110,13 @@ installWithBrewCask font-fira-code
 installWithMAS "Xcode"
 installWithMAS "ForkLift"
 
+echo 'Installation des apps de développement pour Jekyll.'
+installWithBrew gsl imagemagick pkg-config
+# Mise à jour de Ruby
+installWithBrew ruby
+# Mise à jour de RubyGems
+sudo gem update --system --silent
+
 echo 'Installation des apps de communication.'
 installWithMAS "Tweetbot"
 installWithMAS "Slack"
