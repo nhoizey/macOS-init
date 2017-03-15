@@ -127,6 +127,8 @@ installWithBrew gsl imagemagick pkg-config
 installWithBrew ruby
 # Mise à jour de RubyGems
 sudo gem update --system --silent
+# Installation de Bundler
+sudo gem install bundler
 
 echo 'Installation des apps de communication.'
 installWithMAS "Tweetbot"
