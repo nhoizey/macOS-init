@@ -8,7 +8,7 @@ $ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
 
 ## Présentation
 
-Ce script initialement très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
+Ce script initialement très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) grâce à la suggestion de [Thomas Parisot](https://twitter.com/oncletom), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
 
 Ce script exploite exclusivement des lignes de commande Shell et il n'a ainsi aucune dépendance. Quelques pré-requis toutefois :
 
