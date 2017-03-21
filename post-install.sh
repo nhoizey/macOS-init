@@ -42,6 +42,12 @@ sudo gem install bundler
 
 # Ajout des binaires Homebrew au PATH
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
+echo "Installation des outils de développement Node"
+# Installation de composants Node
+npm install -g npm-check-updates
+npm install grunt -g
+npm install grunt-cli -g
+
 echo "Finalisation de l'installation de PHP"
 echo 'export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"' >> ~/.zshrc
 brew services start homebrew/php/php71
