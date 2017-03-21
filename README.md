@@ -1,10 +1,16 @@
-# Script d'installation et de configuration d'un Mac
-
-Ce script intialelent très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
+# Script d'installation et de configuration initiale d'un Mac
 
 **⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-post-installation#comment-lutiliser) en fonction de vos besoins ! ⚠️**
 
+## TL;DR réservé à Nicolas (ou toute personne ayant EXACTEMENT les mêmes applications à installer)
+
+```shell
+$ curl -sfL https://raw.githubusercontent.com/nhoizey/macOS-post-installation/master/run.sh | sh
+```
+
 ## Présentation
+
+Ce script initialement très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
 
 Ce script exploite exclusivement des lignes de commande Shell et il n'a ainsi aucune dépendance. Quelques pré-requis toutefois :
 
