@@ -5,7 +5,7 @@
 ## TL;DR réservé à Nicolas (ou toute personne ayant EXACTEMENT les mêmes applications à installer)
 
 ```shell
-$ curl -sfL https://raw.githubusercontent.com/nhoizey/macOS-post-installation/master/run.sh | sh
+$ curl -sfL https://raw.githubusercontent.com/nhoizey/macOS-init/master/run.sh | sh
 ```
 
 ## Présentation
