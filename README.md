@@ -1,5 +1,3 @@
-# Script d'installation et de configuration initiale d'un Mac
-
 **⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-post-installation#comment-lutiliser) en fonction de vos besoins ! ⚠️**
 
 ## TL;DR réservé à Nicolas
