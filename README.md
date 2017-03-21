@@ -24,9 +24,9 @@ Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package m
 
 Voici comment utiliser les deux scripts :
 
-- Téléchargez la dernière version du projet ([lien direct](https://github.com/nhoizey/macOS-post-installation/archive/master.zip)) ;
+- Téléchargez la dernière version du projet ([lien direct](https://github.com/nhoizey/macOS-init/archive/master.zip)) ;
 - ouvrez les fichiers `post-install.sh` et `Brewfile`, et modifiez ce qui est installé par défaut ;
-- pensez à changer la ligne `open -a Dropbox` de [`post-install.sh`](https://github.com/nhoizey/macOS-post-installation/blob/master/post-install.sh) en fonction du service de Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez un ;
+- pensez à changer la ligne `open -a Dropbox` de [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) en fonction du service de Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez un ;
 - à partir de la ligne `## *************** CONFIGURATION ***************`, le script configure quelques réglages par défaut, à modifier selon vos besoins ;
 - ouvrez ensuite le Terminal de macOS, glissez le fichier `post-install.sh` appuyez sur la touche entrée et accrochez votre ceinture ;
 - le script fonctionnera largement sans votre intervention, sauf :
