@@ -8,6 +8,7 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'homebrew/homebrew-php'
 #? tap 'homebrew/core'
 
 # Définir où placer les applications installées
@@ -66,6 +67,7 @@ cask 'google-chrome'
 
 # Outils de développement
 brew 'node'
+brew 'php71', args: ['with-httpd24']
 cask 'duet'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'

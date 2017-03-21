@@ -51,6 +51,10 @@ sudo gem install bundler
 
 # Ajout des binaires Homebrew au PATH
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
+echo "Finalisation de l'installation de PHP"
+echo 'export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"' >> ~/.zshrc
+brew services start homebrew/php/php71
+brew services start homebrew/apache/httpd24
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
