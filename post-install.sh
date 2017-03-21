@@ -11,9 +11,12 @@
 ## LA BASE : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
-  echo 'Installation de Homebrew'
+  echo "Installation de Homebrew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+# Ajout des binaires Homebrew au PATH
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
 # Mettre à jour la liste des applications disponibles
 brew update
@@ -27,6 +30,7 @@ open -a Dropbox
 
 # installation en spécifique de TigerVPN
 if [ ! -e "/Applications/tigerVPN.app" ]; then
+  echo "Installation de tigerVPN"
   curl -s -L -o $HOME/Downloads/tigerVPN.dmg "https://apps-tigervpn.netdna-ssl.com/mac/tigerVPN_1_1.dmg"
   hdiutil attach -quiet $HOME/Downloads/tigerVPN.dmg
   ditto -rsrc "/Volumes/tigerVPN/tigerVPN.app" /Applications/tigerVPN.app
@@ -34,14 +38,12 @@ if [ ! -e "/Applications/tigerVPN.app" ]; then
   rm -f $HOME/Downloads/tigerVPN.dmg
 fi
 
-echo 'Installation des apps de développement pour Jekyll.'
+echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
 sudo gem update --system --silent
 # Installation de Bundler
 sudo gem install bundler
 
-# Ajout des binaires Homebrew au PATH
-echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 echo "Installation des outils de développement Node"
 # Installation de composants Node
 npm install -g npm-check-updates
@@ -54,7 +56,7 @@ brew services start homebrew/php/php71
 brew services start homebrew/apache/httpd24
 
 ## ************************* CONFIGURATION ********************************
-echo "Configuration de quelques paramètres par défaut…"
+echo "Configuration de quelques paramètres par défaut"
 
 ## FINDER
 
