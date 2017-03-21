@@ -2,7 +2,7 @@
 
 **⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-post-installation#comment-lutiliser) en fonction de vos besoins ! ⚠️**
 
-## TL;DR réservé à Nicolas (ou toute personne ayant EXACTEMENT les mêmes applications à installer)
+## TL;DR réservé à Nicolas
 
 ```shell
 $ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
