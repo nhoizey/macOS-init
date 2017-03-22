@@ -38,6 +38,9 @@ if [ ! -e "/Applications/tigerVPN.app" ]; then
   rm -f $HOME/Downloads/tigerVPN.dmg
 fi
 
+echo "Finalisation de l'installation de The Fuck avec l'alias \"whoops\""
+echo 'eval "$(thefuck --alias whoops)"' >> ~/.zshrc
+
 echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
 sudo gem update --system --silent

@@ -17,100 +17,114 @@ cask_args appdir: '/Applications'
 # Permettre l'installation d'applications de l'AppStore
 brew 'mas'
 
-# Outils système et réseau
+# Réseau
+brew 'curl'
 brew 'dnsmasq'
 brew 'openssh'
 brew 'openssl'
 brew 'rsync'
+brew 'storm'
 brew 'wget'
+cask 'controlplane'
+cask 'transmission'
 mas 'ForkLift', id: 412448059
 
-# Outils pour le terminal
+# Terminal
 brew 'autojump'
 brew 'joe'
+brew 'thefuck'
 cask 'iterm2'
 
-# Utilitaires
-cask 'appdelete'
-cask 'appshelf'
+# Améliorations d'interface et usage
 cask 'bartender'
 cask 'coconutbattery'
-cask 'controlplane'
+cask 'rcdefaultapp'
+cask 'rightzoom'
+mas 'Amphetamine', id: 937984704
+mas 'AutoMute', id: 1118136179
+mas 'BetterSnapTool', id: 417375580
+mas 'Silent Start', id: 905747757
+
+# Utilitaires divers
+cask 'appdelete'
+cask 'appshelf'
 cask 'disk-inventory-x'
 cask 'macid'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
 cask 'quicklook-json'
-cask 'rcdefaultapp'
-cask 'rightzoom'
 cask 'yemuzip'
 mas '1Password', id: 443987910
-mas 'Amphetamine', id: 937984704
-mas 'AutoMute', id: 1118136179
-mas 'BetterSnapTool', id: 417375580
 mas 'Renamer', id: 402286241
-mas 'Silent Start', id: 905747757
-mas 'Sip', id: 507257563
-mas 'Skitch', id: 425955336
 mas 'The Unarchiver', id: 425424353
 
-# Outils de backup et synchro
+# Backup et synchro
 brew 'mackup'
 cask 'carbon-copy-cloner'
 cask 'crashplan'
 cask 'dropbox'
 cask 'google-drive'
 
-# Outils Web
+# Web
 cask 'firefox'
 cask 'google-chrome'
+mas 'Opera', id: 404764921
 
-# Outils de développement
+# Développement
+brew 'git'
 brew 'node'
 brew 'php71', args: ['with-httpd24']
+brew 'pkg-config'
+brew 'ruby'
 cask 'duet'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
 cask 'ghostlab'
 cask 'github-desktop'
-cask 'iterm2'
 cask 'java6'
 cask 'reflector'
 cask 'sequel-pro'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
-mas 'Opera', id: 404764921
-mas 'Xcode', id: 497799835
+cask 'visual-studio-code'
+#mas 'Xcode', id: 497799835
 
-# Dépendances spécifiques à Jekyll
+# Images
 brew 'graphicsmagick'
 brew 'gsl'
 brew 'imagemagick@6'
-brew 'pkg-config'
-brew 'ruby'
+cask 'imageoptim'
+mas 'Boxy SVG', id: 611658502
+mas 'Skitch', id: 425955336
+mas 'Sip', id: 507257563
 
-# Multimédia
+# Vidéos
 brew 'ffmpeg'
 brew 'youtube-dl'
 cask 'catch'
-cask 'adobe-creative-cloud'
 cask 'handbrake'
 cask 'licecap'
-cask 'logitech-harmony'
 cask 'molotov'
 cask 'screenflow'
-cask 'spotify'
 cask 'subler'
 cask 'subsmarine'
-cask 'transmission'
 cask 'vlc'
-mas 'Boxy SVG', id: 611658502
-mas 'Export for iTunes', id: 880764359
 mas 'GIF Brewery 3', id: 1081413713
-mas 'gps4cam', id: 704400176
-mas 'I Love Stars', id: 402642760
 mas 'iFlicks 2', id: 731062389
 mas 'Screeny', id: 440991524
+
+# Musique
+cask 'spotify'
+mas 'Export for iTunes', id: 880764359
+mas 'I Love Stars', id: 402642760
+
+# Photo
+cask 'adobe-creative-cloud'
+mas 'gps4cam', id: 704400176
+
+# Divertissement
+cask 'logitech-harmony'
+cask 'steam'
 
 # Communication
 cask 'colloquy'
@@ -123,6 +137,3 @@ mas 'Tweetbot', id: 557168941
 cask 'macdown'
 mas 'Evernote', id: 406056744
 mas 'ReadKit', id: 588726889
-
-# Divertissement
-cask 'steam'
