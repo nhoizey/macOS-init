@@ -212,6 +212,9 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ## SONS
 
+# Démarrer en silence
+sudo nvram SystemAudioVolume="%00"
+
 # Alertes sonores quand on modifie le volume
 sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 

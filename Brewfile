@@ -43,7 +43,6 @@ cask 'rightzoom'
 mas 'Amphetamine', id: 937984704
 mas 'AutoMute', id: 1118136179
 mas 'BetterSnapTool', id: 417375580
-mas 'Silent Start', id: 905747757
 
 # Utilitaires divers
 cask 'appdelete'
