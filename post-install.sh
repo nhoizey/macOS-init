@@ -93,6 +93,9 @@ sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
+# Supprimer les doublons dans le menu "ouvrir avec…"
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
 # Recherche dans le dossier en cours par défaut
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
