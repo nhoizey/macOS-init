@@ -8,6 +8,13 @@
 # https://www.macg.co/logiciels/2017/02/comment-synchroniser-les-preferences-des-apps-avec-mackup-97442
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
+# Demande du mot de passe administrateur dès le départ
+sudo -v
+
+# Keep-alive: met à jour le timestamp de `sudo`
+# tant que `post-install.sh` n'est pas terminé
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 ## LA BASE : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
