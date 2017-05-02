@@ -1,11 +1,5 @@
 **⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-post-installation#comment-lutiliser) en fonction de vos besoins ! ⚠️**
 
-## TL;DR réservé à Nicolas
-
-```shell
-$ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
-```
-
 ## Présentation
 
 Ce script initialement très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) grâce à la suggestion de [Thomas Parisot](https://twitter.com/oncletom), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
@@ -38,3 +32,9 @@ Voici comment utiliser les deux scripts :
 - quand le premier script est terminé, et quand vos données sont synchronisées depuis le cloud, ouvrez le fichier `post-cloud.sh` :
   - [ligne 8](https://github.com/nhoizey/macOS-init/blob/master/post-cloud.sh#L8), modifiez cette ligne en fonction du service de Cloud choisi, ou laissez-la en commentaire si vous utilisez Dropbox (choix par défaut) ;
 - toujours dans le Terminal, glissez le fichier `post-cloud.sh` avant de valider avec la touche entrée pour finir l'installation.
+
+## TL;DR réservé à Nicolas
+
+```shell
+$ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
+```
