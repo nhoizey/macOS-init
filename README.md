@@ -6,11 +6,11 @@ Ce script initialement très largement inspiré de [celui de Nicolas Furno](http
 
 Ce script exploite exclusivement des lignes de commande Shell et il n'a ainsi aucune dépendance. Quelques pré-requis toutefois :
 
-- Il faut être administrateur du Mac pour l'utiliser ;
+- Il faut être administrateur du Mac pour l'utiliser (il exploite la commande `sudo`) ;
 - Il faut s'être connecté au préalable dans le Mac App Store ;
-- les apps à installer depuis la boutique d'Apple doivent déjà être associées à votre compte iTunes Store.
+- Les apps à installer depuis la boutique d'Apple doivent déjà être associées à votre compte iTunes Store, donc avoir déjà été achetées, ou téléchargées au moins une fois si elles sont gratuites.
 
-Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package manager for macOS"), [Cask](https://caskroom.github.io) et [mas](https://github.com/mas-cli/mas) pour installer les apps, [mackup](https://github.com/lra/mackup) pour restaurer des préférences depuis un autre Mac. Plus de nombreuses idées piochées [à droite et à gauche](https://github.com/nicolinuxfr/macOS-post-installation#inspirations).
+Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package manager for macOS"), [Cask](https://caskroom.github.io) et [mas](https://github.com/mas-cli/mas) pour installer les apps, [mackup](https://github.com/lra/mackup) pour restaurer des préférences depuis une installation précédente ou un autre Mac. Plus de nombreuses idées piochées [à droite et à gauche](https://github.com/nicolinuxfr/macOS-post-installation#inspirations).
 
 *Testé avec macOS Sierra.*
 
@@ -18,22 +18,38 @@ Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package m
 
 Voici comment utiliser les deux scripts :
 
-- Téléchargez la dernière version du projet ([lien direct](https://github.com/nhoizey/macOS-init/archive/master.zip)) ;
-- ouvrez les fichiers `post-install.sh` et `Brewfile`, et modifiez ce qui est installé par défaut ;
-- pensez à changer la ligne `open -a Dropbox` de [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) en fonction du service de Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez un ;
-- à partir de la ligne `## *************** CONFIGURATION ***************`, le script configure quelques réglages par défaut, à modifier selon vos besoins ;
-- ouvrez ensuite le Terminal de macOS, glissez le fichier `post-install.sh` appuyez sur la touche entrée et accrochez votre ceinture ;
-- le script fonctionnera largement sans votre intervention, sauf :
+### Installation initiale de l'OS vierge
+
+1. Installez macOS
+1. Lancez le Mac App Store et connectez-vous à votre compte
+
+### Première étape
+
+1. Téléchargez la dernière version du projet ([lien direct](https://github.com/nhoizey/macOS-init/archive/master.zip)) ;
+1. Ouvrez les fichiers `post-install.sh` et `Brewfile`, et modifiez ce qui est installé par défaut ;
+1. Pensez à changer la ligne `open -a Dropbox` de [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) en fonction du service Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez ;
+1. À partir de la ligne `## *************** CONFIGURATION ***************`, le script configure quelques réglages par défaut, à modifier selon vos besoins ;
+1. [Ouvrez ensuite le Terminal de macOS](http://fr.wikihow.com/ouvrir-le-Terminal-sur-un-Mac), glissez le fichier `post-install.sh` depuis le Finder vers le Terminal, et appuyez sur la touche <kbd>Entrée</kbd> et accrochez votre ceinture ;
+
+Le script fonctionnera largement sans votre intervention, sauf :
+
   - pour valider l'installation de Homebrew ;
   - pour saisir le mot de passe administrateur pour Homebrew ;
   - pour le mot de passe administrateur nécessaire pour Cask ;
   - pour certains logiciels qui nécessitent un accès admin ;
-- si tout va bien, il se terminera normalement sans erreur, mais en cas d'erreur, vous pourrez relancer le script et seul ce qui n'a pas déjà été installé, sera installé ;
-- quand le premier script est terminé, et quand vos données sont synchronisées depuis le cloud, ouvrez le fichier `post-cloud.sh` :
-  - [ligne 8](https://github.com/nhoizey/macOS-init/blob/master/post-cloud.sh#L8), modifiez cette ligne en fonction du service de Cloud choisi, ou laissez-la en commentaire si vous utilisez Dropbox (choix par défaut) ;
-- toujours dans le Terminal, glissez le fichier `post-cloud.sh` avant de valider avec la touche entrée pour finir l'installation.
+
+Si tout va bien, il se terminera normalement sans erreur, mais en cas d'erreur, vous pourrez relancer le script et seul ce qui n'a pas déjà été installé, sera installé ;
+
+### Seconde étape
+
+Quand le premier script est terminé, et quand vos données sont synchronisées depuis le cloud :
+
+1. Ouvrez le fichier `post-cloud.sh` et modifiez la [ligne 8](https://github.com/nhoizey/macOS-init/blob/master/post-cloud.sh#L8) en fonction du service de Cloud choisi, ou laissez-la en commentaire si vous utilisez Dropbox (choix par défaut) ;
+1. Glissez le fichier `post-cloud.sh` du Finder vers le Terminal, et appuyez sur la touche <kbd>Entrée</kbd> pour finir l'installation.
 
 ## TL;DR réservé à Nicolas
+
+Cette automatisation supplémentaire lance directement l'installation de **ma propre sélection** d'applications :
 
 ```shell
 $ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
