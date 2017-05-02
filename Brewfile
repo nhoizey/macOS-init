@@ -114,6 +114,7 @@ mas 'Screeny', id: 440991524
 
 # Musique
 cask 'spotify'
+cask 'xld'
 mas 'Export for iTunes', id: 880764359
 mas 'I Love Stars', id: 402642760
 
