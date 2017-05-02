@@ -1,22 +1,10 @@
-**⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-post-installation#comment-lutiliser) en fonction de vos besoins ! ⚠️**
+**⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-init#comment-lutiliser) en fonction de vos besoins ! ⚠️**
 
 ## Présentation
 
-Ce script initialement très largement inspiré de [celui de Nicolas Furno](https://github.com/nicolinuxfr/macOS-post-installation), qu'il a [décrit dans un article MacGénération](https://www.macg.co/logiciels/2017/01/un-script-pour-configurer-automatiquement-un-nouveau-mac-96652), est maintenant passé à l'utilisation de [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) grâce à la suggestion de [Thomas Parisot](https://twitter.com/oncletom), et me permet d'installer les logiciels que j'utilise et de configurer quelques paramètres automatiquement après l'installation de macOS.
+Voir la présentation détaillée dans mon billet de blog « [automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/2017/05/automatiser-l-installation-des-applications-sur-un-nouveau-mac.html) ».
 
-Ce script exploite exclusivement des lignes de commande Shell et il n'a ainsi aucune dépendance. Quelques pré-requis toutefois :
-
-- Il faut être administrateur du Mac pour l'utiliser (il exploite la commande `sudo`) ;
-- Il faut s'être connecté au préalable dans le Mac App Store ;
-- Les apps à installer depuis la boutique d'Apple doivent déjà être associées à votre compte iTunes Store, donc avoir déjà été achetées, ou téléchargées au moins une fois si elles sont gratuites.
-
-Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package manager for macOS"), [Cask](https://caskroom.github.io) et [mas](https://github.com/mas-cli/mas) pour installer les apps, [mackup](https://github.com/lra/mackup) pour restaurer des préférences depuis une installation précédente ou un autre Mac. Plus de nombreuses idées piochées [à droite et à gauche](https://github.com/nicolinuxfr/macOS-post-installation#inspirations).
-
-*Testé avec macOS Sierra.*
-
-## Comment l'utiliser ?
-
-Voici comment utiliser les deux scripts :
+## Utilisation
 
 ### Installation initiale de l'OS vierge
 
