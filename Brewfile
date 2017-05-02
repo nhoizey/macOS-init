@@ -9,7 +9,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/homebrew-php'
-#? tap 'homebrew/core'
+tap 'caskroom/drivers'
 
 # Définir où placer les applications installées
 cask_args appdir: '/Applications'
