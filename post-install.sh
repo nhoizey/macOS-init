@@ -35,16 +35,6 @@ brew bundle
 echo "Ouverture de Dropbox pour commencer la synchronisation"
 open -a Dropbox
 
-# installation en spécifique de TigerVPN
-if [ ! -e "/Applications/tigerVPN.app" ]; then
-  echo "Installation de tigerVPN"
-  curl -s -L -o $HOME/Downloads/tigerVPN.dmg "https://apps-tigervpn.netdna-ssl.com/mac/tigerVPN_1_1.dmg"
-  hdiutil attach -quiet $HOME/Downloads/tigerVPN.dmg
-  ditto -rsrc "/Volumes/tigerVPN/tigerVPN.app" /Applications/tigerVPN.app
-  hdiutil detach "/Volumes/tigerVPN"
-  rm -f $HOME/Downloads/tigerVPN.dmg
-fi
-
 echo "Finalisation de l'installation de The Fuck avec l'alias \"whoops\""
 echo 'eval "$(thefuck --alias whoops)"' >> ~/.zshrc
 

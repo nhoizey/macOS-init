@@ -26,6 +26,7 @@ brew 'rsync'
 brew 'storm'
 brew 'wget'
 cask 'controlplane'
+cask 'tigervpn'
 cask 'transmission'
 mas 'ForkLift', id: 412448059
 
