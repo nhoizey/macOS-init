@@ -135,6 +135,7 @@ mas 'Slack', id: 803453959
 mas 'Tweetbot', id: 557168941
 
 # Bureautique
+cask 'libreoffice'
 cask 'macdown'
 mas 'Evernote', id: 406056744
 mas 'ReadKit', id: 588726889
