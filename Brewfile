@@ -72,6 +72,7 @@ mas 'Opera', id: 404764921
 
 # Développement
 brew 'git'
+brew 'mariadb'
 brew 'node'
 brew 'php71', args: ['with-httpd24']
 brew 'pkg-config'
