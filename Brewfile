@@ -62,7 +62,6 @@ mas 'The Unarchiver', id: 425424353
 brew 'mackup'
 cask 'carbon-copy-cloner'
 cask 'crashplan'
-cask 'dropbox'
 cask 'google-drive'
 
 # Web

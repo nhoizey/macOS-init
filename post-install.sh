@@ -28,12 +28,14 @@ echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 # Mettre à jour la liste des applications disponibles
 brew update
 
+# Installer Dropbox au plus tôt pour lancer la synchro des settings
+brew cask install dropbox
+echo "Ouverture de Dropbox pour commencer la synchronisation"
+open -a Dropbox
+
 # Installer les nouvelles applications du bundle Brewfile
 # et mettre à jour celles déjà présentes
 brew bundle
-
-echo "Ouverture de Dropbox pour commencer la synchronisation"
-open -a Dropbox
 
 echo "Finalisation de l'installation de The Fuck avec l'alias \"whoops\""
 echo 'eval "$(thefuck --alias whoops)"' >> ~/.zshrc
