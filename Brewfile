@@ -54,6 +54,7 @@ cask 'muzzle'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
 cask 'quicklook-json'
+cask 'rocket'
 cask 'yemuzip'
 mas '1Password', id: 443987910
 mas 'Renamer', id: 402286241
