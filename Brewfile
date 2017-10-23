@@ -139,5 +139,6 @@ mas 'Tweetbot', id: 557168941
 # Bureautique
 cask 'libreoffice'
 cask 'macdown'
+cask 'typora'
 cask 'vienna'
 mas 'Evernote', id: 406056744
