@@ -49,8 +49,8 @@ sudo gem install bundler
 echo "Installation des outils de développement Node"
 # Installation de composants Node
 npm install -g npm-check-updates
-npm install grunt -g
-npm install grunt-cli -g
+npm install -g grunt
+npm install -g grunt-cli
 
 echo "Finalisation de l'installation de PHP"
 echo 'export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"' >> ~/.zshrc
