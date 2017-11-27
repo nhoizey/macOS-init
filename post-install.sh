@@ -77,7 +77,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Nlsv ▸ List View
 # clmv ▸ Column View
 # icnv ▸ Icon View
-defaults write com.apple.finder FXPreferredViewStyle -string “clmv”
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Ne pas afficher le chemin d'accès
 defaults write com.apple.finder ShowPathbar -bool false
