@@ -52,6 +52,10 @@ npm install -g npm-check-updates
 npm install -g grunt
 npm install -g grunt-cli
 
+echo "Installation d'applications en Node"
+# De meilleures aides en ligne : http://tldr.sh/
+npm install -g tldr
+
 echo "Finalisation de l'installation de PHP"
 echo 'export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"' >> ~/.zshrc
 brew services start homebrew/php/php71
