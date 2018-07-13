@@ -233,8 +233,8 @@ sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 # Enregistrer les screenshots en PNG (autres options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Ne pas mettre d'ombre sur les screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+# Mettre une ombre sur les screenshots
+defaults write com.apple.screencapture disable-shadow -bool false
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
