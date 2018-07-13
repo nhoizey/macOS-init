@@ -191,6 +191,9 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 # Vérifier la disponibilité de mise à jour quotidiennement
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+# Vérifier les mises à jour automatiquement
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
 # Safari : menu développeur / URL en bas à gauche / URL complète en haut / Do Not Track / affichage barre favoris
 defaults write com.apple.safari IncludeDevelopMenu -int 1
 defaults write com.apple.safari ShowOverlayStatusBar -int 1
