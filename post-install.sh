@@ -121,8 +121,10 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Taille minimum
 defaults write com.apple.dock tilesize -int 32
+
 # Agrandissement actif
 defaults write com.apple.dock magnification -bool true
+
 # Taille maximale pour l'agrandissement
 defaults write com.apple.dock largesize -float 128
 
@@ -180,6 +182,9 @@ sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Trackpad : toucher pour cliquer
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Souris : glisser une fenêtre de n'importe où avec ^ + Cmd
+defaults write -g NSWindowShouldDragOnGesture -bool true
 
 ## APPS
 
