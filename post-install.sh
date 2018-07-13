@@ -79,8 +79,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # icnv ▸ Icon View
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
-# Ne pas afficher le chemin d'accès
-defaults write com.apple.finder ShowPathbar -bool false
+# Afficher le chemin d'accès
+defaults write com.apple.finder ShowPathbar -bool true
 
 # Affichage de toutes les extensions
 sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
