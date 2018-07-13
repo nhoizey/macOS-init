@@ -64,6 +64,9 @@ brew services start homebrew/apache/httpd24
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut"
 
+# Fermer les fenêtres "Préférences Système"
+osascript -e 'tell application "System Preferences" to quit'
+
 ## FINDER
 
 # Affichage de la bibliothèque
