@@ -211,6 +211,9 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
+## iTerm2 : ne pas afficher d'alerte à la fermeture
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 ## SONS
 
 # Démarrer en silence
