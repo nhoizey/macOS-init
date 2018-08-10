@@ -11,7 +11,7 @@ Voir la présentation détaillée dans mon billet de blog « [automatiser l'ins
 1. Installez macOS
 1. Lancez le Mac App Store et connectez-vous à votre compte
 
-⚠️ Attention, si vous migrez depuis une autre machine ou faites une réinstallation complète, utilisez tant que possible le même *username*, sinon Mackup ne fera pas les bonnes actions pour récupérer les paramètres des applications.
+⚠️ Attention, si vous migrez depuis une autre machine ou faites une réinstallation complète, utilisez tant que possible le même _username_, sinon Mackup ne fera pas les bonnes actions pour récupérer les paramètres des applications.
 
 ### Première étape
 
@@ -23,10 +23,10 @@ Voir la présentation détaillée dans mon billet de blog « [automatiser l'ins
 
 Le script fonctionnera largement sans votre intervention, sauf :
 
-  - pour valider l'installation de Homebrew ;
-  - pour saisir le mot de passe administrateur pour Homebrew ;
-  - pour le mot de passe administrateur nécessaire pour Cask ;
-  - pour certains logiciels qui nécessitent un accès admin ;
+- pour valider l'installation de Homebrew ;
+- pour saisir le mot de passe administrateur pour Homebrew ;
+- pour le mot de passe administrateur nécessaire pour Cask ;
+- pour certains logiciels qui nécessitent un accès admin ;
 
 Si tout va bien, il se terminera normalement sans erreur, mais en cas d'erreur, vous pourrez relancer le script et seul ce qui n'a pas déjà été installé, sera installé ;
 
