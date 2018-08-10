@@ -8,5 +8,5 @@ cd $HOME/Downloads/macOS-init
 curl -sL https://github.com/nhoizey/macOS-init/archive/master.zip -o master.zip
 unzip -qj master.zip
 rm master.zip run.sh
-chmod +x post-install.sh post-cloud.sh
-./post-install.sh
+chmod +x run-first.sh post-sync.sh
+./run-first.sh

@@ -37,9 +37,6 @@ open -a Dropbox
 # et mettre à jour celles déjà présentes
 brew bundle
 
-echo "Finalisation de l'installation de The Fuck avec l'alias \"whoops\""
-echo 'eval "$(thefuck --alias whoops)"' >> ~/.zshrc
-
 echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
 sudo gem update --system --silent
@@ -49,8 +46,8 @@ sudo gem install bundler
 echo "Installation des outils de développement Node"
 # Installation de composants Node
 npm install -g npm-check-updates
-npm install -g grunt
-npm install -g grunt-cli
+# npm install -g grunt
+# npm install -g grunt-cli
 
 echo "Installation d'applications en Node"
 # De meilleures aides en ligne : http://tldr.sh/

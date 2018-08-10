@@ -11,7 +11,7 @@ echo "Restauration des préférences"
 mackup restore -n
 
 # Enregistrement des copies d'écran sur Dropbox
-defaults write com.apple.screencapture location -string “$HOME/Dropbox/Captures/MB12”
+defaults write com.apple.screencapture location -string "$HOME/Dropbox/Captures/MB12"
 
 echo "Configuration de dnsmasq"
 # http://passingcuriosity.com/2013/dnsmasq-dev-osx/
