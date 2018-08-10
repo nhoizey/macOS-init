@@ -33,7 +33,9 @@ mas 'ForkLift', id: 412448059
 # Terminal
 brew 'autojump'
 brew 'joe'
-brew 'thefuck'
+brew 'zsh'
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
@@ -69,7 +71,7 @@ cask 'google-backup-and-sync'
 # Web
 cask 'firefox'
 cask 'google-chrome'
-mas 'Opera', id: 404764921
+# mas 'Opera', id: 404764921
 
 # Développement
 brew 'git'
@@ -81,6 +83,8 @@ brew 'ruby'
 cask 'duet'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
+# https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+cask 'font-hack-nerd-font'
 cask 'ghostlab'
 cask 'github-desktop'
 cask 'java6'
@@ -105,20 +109,20 @@ brew 'ffmpeg'
 brew 'youtube-dl'
 cask 'catch'
 cask 'handbrake'
-cask 'licecap'
+# cask 'licecap'
 cask 'molotov'
 cask 'screenflow'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
-mas 'GIF Brewery 3', id: 1081413713
+# mas 'GIF Brewery 3', id: 1081413713
 mas 'iFlicks 2', id: 731062389
 mas 'Screeny', id: 440991524
 
 # Musique
 cask 'spotify'
-cask 'xld'
-mas 'Export for iTunes', id: 880764359
+# cask 'xld'
+# mas 'Export for iTunes', id: 880764359
 mas 'I Love Stars', id: 402642760
 
 # Photo
@@ -130,7 +134,7 @@ cask 'logitech-harmony'
 cask 'steam'
 
 # Communication
-cask 'colloquy'
+# cask 'colloquy'
 cask 'rambox'
 cask 'skype'
 mas 'Slack', id: 803453959
@@ -139,6 +143,6 @@ mas 'Tweetbot', id: 557168941
 # Bureautique
 cask 'libreoffice'
 cask 'macdown'
-cask 'typora'
+# cask 'typora'
 cask 'vienna'
 mas 'Evernote', id: 406056744
