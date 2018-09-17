@@ -65,7 +65,7 @@ mas 'The Unarchiver', id: 425424353
 # Backup et synchro
 brew 'mackup'
 cask 'carbon-copy-cloner'
-cask 'crashplan'
+cask 'backblaze'
 cask 'google-backup-and-sync'
 
 # Web
