@@ -8,7 +8,6 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
-tap 'homebrew/homebrew-php'
 tap 'caskroom/drivers'
 
 # Définir où placer les applications installées
@@ -71,16 +70,13 @@ cask 'google-backup-and-sync'
 # Web
 cask 'firefox'
 cask 'google-chrome'
-# mas 'Opera', id: 404764921
 
 # Développement
 brew 'git'
 brew 'mariadb'
 brew 'node'
-brew 'php71', args: ['with-httpd24']
 brew 'pkg-config'
 brew 'ruby'
-cask 'duet'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
@@ -88,6 +84,7 @@ cask 'font-hack-nerd-font'
 cask 'ghostlab'
 cask 'github-desktop'
 cask 'java6'
+cask 'meld'
 cask 'reflector'
 cask 'sequel-pro'
 cask 'virtualbox'
@@ -136,13 +133,14 @@ cask 'steam'
 # Communication
 # cask 'colloquy'
 cask 'rambox'
-cask 'skype'
+# cask 'skype'
 mas 'Slack', id: 803453959
 mas 'Tweetbot', id: 557168941
 
 # Bureautique
-cask 'libreoffice'
+# cask 'libreoffice'
 cask 'macdown'
 # cask 'typora'
 cask 'vienna'
 mas 'Evernote', id: 406056744
+mas 'Reeder 3', id: 880001334
