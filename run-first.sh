@@ -53,10 +53,9 @@ echo "Installation d'applications en Node"
 # De meilleures aides en ligne : http://tldr.sh/
 npm install -g tldr
 
-echo "Finalisation de l'installation de PHP"
-echo 'export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"' >> ~/.zshrc
-brew services start homebrew/php/php71
-brew services start homebrew/apache/httpd24
+echo "Finalisation de l'installation de Apache et PHP"
+brew services start httpd
+brew services start php
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut"
