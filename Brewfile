@@ -3,7 +3,6 @@
 
 # Taps
 
-tap 'homebrew/dupes'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
@@ -50,7 +49,7 @@ mas 'BetterSnapTool', id: 417375580
 cask 'appdelete'
 cask 'appshelf'
 cask 'disk-inventory-x'
-cask 'macid'
+cask 'unlox'
 cask 'muzzle'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
