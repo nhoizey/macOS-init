@@ -126,7 +126,6 @@ cask 'adobe-creative-cloud'
 mas 'gps4cam', id: 704400176
 
 # Divertissement
-cask 'logitech-harmony'
 cask 'steam'
 
 # Communication
