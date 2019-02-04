@@ -41,7 +41,7 @@ echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
 sudo gem update --system --silent
 # Installation de Bundler
-sudo gem install bundler
+sudo gem install bundler -n /usr/local/bin
 
 echo "Installation des outils de développement Node"
 # Installation de composants Node

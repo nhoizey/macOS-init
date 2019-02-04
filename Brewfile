@@ -46,7 +46,7 @@ mas 'AutoMute', id: 1118136179
 mas 'BetterSnapTool', id: 417375580
 
 # Utilitaires divers
-cask 'appdelete'
+cask 'appcleaner'
 cask 'appshelf'
 cask 'disk-inventory-x'
 cask 'unlox'
