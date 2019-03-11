@@ -17,7 +17,7 @@ brew 'mas'
 
 # Réseau
 brew 'curl'
-brew 'dnsmasq'
+brew 'dnsmasq', restart_service: true
 brew 'openssh'
 brew 'openssl'
 brew 'rsync'
@@ -107,7 +107,7 @@ cask 'catch'
 cask 'handbrake'
 # cask 'licecap'
 cask 'molotov'
-cask 'screenflow'
+# cask 'screenflow'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
