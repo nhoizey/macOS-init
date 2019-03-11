@@ -64,7 +64,7 @@ mas 'The Unarchiver', id: 425424353
 brew 'mackup'
 cask 'carbon-copy-cloner'
 cask 'backblaze'
-cask 'google-backup-and-sync'
+cask 'google-drive-file-stream'
 
 # Web
 cask 'firefox'
@@ -81,7 +81,7 @@ cask 'font-fira-code'
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 cask 'font-hack-nerd-font'
 cask 'ghostlab'
-cask 'github-desktop'
+cask 'github'
 cask 'java6'
 cask 'meld'
 cask 'reflector'
