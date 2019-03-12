@@ -40,7 +40,6 @@ cask 'iterm2'
 cask 'bartender'
 cask 'coconutbattery'
 cask 'rcdefaultapp'
-cask 'rightzoom'
 mas 'Amphetamine', id: 937984704
 mas 'AutoMute', id: 1118136179
 mas 'BetterSnapTool', id: 417375580
@@ -54,7 +53,6 @@ cask 'muzzle'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
 cask 'quicklook-json'
-cask 'rocket'
 cask 'yemuzip'
 mas '1Password', id: 443987910
 mas 'Renamer', id: 402286241
@@ -105,9 +103,7 @@ brew 'ffmpeg'
 brew 'youtube-dl'
 cask 'catch'
 cask 'handbrake'
-# cask 'licecap'
 cask 'molotov'
-# cask 'screenflow'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
@@ -139,6 +135,4 @@ mas 'Tweetbot', id: 557168941
 # cask 'libreoffice'
 cask 'macdown'
 # cask 'typora'
-cask 'vienna'
-mas 'Evernote', id: 406056744
 mas 'Reeder 3', id: 880001334
