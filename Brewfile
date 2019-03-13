@@ -37,7 +37,8 @@ brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
-cask 'bartender'
+# cask 'bartender'
+cask 'dozer'
 cask 'coconutbattery'
 cask 'rcdefaultapp'
 mas 'Amphetamine', id: 937984704
