@@ -130,7 +130,7 @@ cask 'steam'
 cask 'rambox'
 # cask 'skype'
 mas 'Slack', id: 803453959
-mas 'Tweetbot', id: 557168941
+mas 'Tweetbot 3', id: 1384080005
 
 # Bureautique
 # cask 'libreoffice'
