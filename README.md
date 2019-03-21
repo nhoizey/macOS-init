@@ -4,6 +4,8 @@
 
 Voir la présentation détaillée dans mon billet de blog « [automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/2017/05/automatiser-l-installation-des-applications-sur-un-nouveau-mac.html) ».
 
+ℹ️ Si vous n'êtes pas sur macOS mais plutôt sur Ubuntu, vous vous êtes trompé d'endroit. Mais Jean-Yves a une solution similaire pour vous avec son [Ubuntu Installer basé sur Ansible](https://github.com/jygastaud/ubuntu-installer).
+
 ## Utilisation
 
 ### Installation initiale de l'OS vierge
