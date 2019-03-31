@@ -68,6 +68,7 @@ cask 'google-drive-file-stream'
 # Web
 cask 'firefox'
 cask 'google-chrome'
+cask 'google-chrome-canary'
 
 # Développement
 brew 'git'
