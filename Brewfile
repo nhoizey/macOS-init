@@ -26,6 +26,7 @@ brew 'wget'
 cask 'controlplane'
 cask 'tigervpn'
 cask 'transmission'
+cask 'tripmode'
 mas 'ForkLift', id: 412448059
 
 # Terminal
