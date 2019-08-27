@@ -137,5 +137,6 @@ mas 'Tweetbot 3', id: 1384080005
 # Bureautique
 # cask 'libreoffice'
 cask 'macdown'
+cask 'netnewswire'
 # cask 'typora'
-mas 'Reeder 3', id: 880001334
+# mas 'Reeder 3', id: 880001334
