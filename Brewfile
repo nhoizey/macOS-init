@@ -98,6 +98,7 @@ brew 'graphicsmagick'
 brew 'gsl'
 brew 'imagemagick@6'
 cask 'imageoptim'
+cask 'xnconvert'
 mas 'Boxy SVG', id: 611658502
 mas 'Skitch', id: 425955336
 mas 'Sip', id: 507257563
