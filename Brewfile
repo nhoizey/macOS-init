@@ -38,10 +38,11 @@ brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
-# cask 'bartender'
+cask 'bartender'
 cask 'dozer'
 cask 'coconutbattery'
 cask 'rcdefaultapp'
+cask 'WebPQuickLook'
 mas 'Amphetamine', id: 937984704
 mas 'AutoMute', id: 1118136179
 mas 'BetterSnapTool', id: 417375580
@@ -110,7 +111,6 @@ cask 'molotov'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
-# mas 'GIF Brewery 3', id: 1081413713
 mas 'iFlicks 2', id: 731062389
 mas 'Screeny', id: 440991524
 
@@ -128,7 +128,6 @@ mas 'gps4cam', id: 704400176
 cask 'steam'
 
 # Communication
-# cask 'colloquy'
 cask 'rambox'
 # cask 'skype'
 mas 'Slack', id: 803453959
@@ -138,5 +137,4 @@ mas 'Tweetbot 3', id: 1384080005
 # cask 'libreoffice'
 cask 'macdown'
 cask 'netnewswire'
-# cask 'typora'
-# mas 'Reeder 3', id: 880001334
+cask 'notion'
