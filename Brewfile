@@ -129,6 +129,7 @@ mas 'gps4cam', id: 704400176
 cask 'steam'
 
 # Communication
+cask 'colloquy'
 cask 'rambox'
 # cask 'skype'
 mas 'Slack', id: 803453959
