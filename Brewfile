@@ -41,6 +41,7 @@ cask 'iterm2'
 cask 'bartender'
 cask 'dozer'
 cask 'coconutbattery'
+cask 'jumpcut'
 cask 'rcdefaultapp'
 cask 'WebPQuickLook'
 mas 'Amphetamine', id: 937984704
