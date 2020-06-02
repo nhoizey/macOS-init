@@ -59,6 +59,7 @@ cask 'quicklook-csv'
 cask 'quicklook-json'
 cask 'yemuzip'
 mas '1Password', id: 443987910
+mas 'Glance', id: 1513574319
 mas 'Renamer', id: 402286241
 mas 'The Unarchiver', id: 425424353
 
