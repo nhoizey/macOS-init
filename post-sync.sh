@@ -29,6 +29,13 @@ echo "Installation de oh-my-zsh"
 # Installation de oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo "Configuration de npm"
+# Change npm's config so it uses tilde by default when saving dependencies
+npm config set save-prefix '~'
+
+echo "Configuration de git"
+git config --global init.defaultBranch main
+
 echo ""
 echo "ET VOILÀ !"
 echo "Il est maintenant possible d'activer d'autres dossiers dans la synchronisation Dropbox."
