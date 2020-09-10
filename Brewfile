@@ -3,11 +3,11 @@
 
 # Taps
 
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'caskroom/drivers'
+tap 'homebrew/cask-drivers'
 
 # Définir où placer les applications installées
 cask_args appdir: '/Applications'
