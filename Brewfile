@@ -24,9 +24,9 @@ brew 'rsync'
 brew 'storm'
 brew 'wget'
 cask 'controlplane'
-cask 'tigervpn'
+# cask 'tigervpn'
 cask 'transmission'
-cask 'tripmode'
+# cask 'tripmode'
 mas 'ForkLift', id: 412448059
 
 # Terminal
@@ -76,22 +76,22 @@ cask 'google-chrome-canary'
 
 # Développement
 brew 'git'
-brew 'mariadb'
+# brew 'mariadb'
 brew 'node'
 brew 'pkg-config'
-brew 'ruby'
+# brew 'ruby'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 cask 'font-hack-nerd-font'
 cask 'ghostlab'
 cask 'github'
-cask 'java6'
+# cask 'java6'
 cask 'meld'
 cask 'reflector'
-cask 'sequel-pro'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
+# cask 'sequel-pro'
+# cask 'virtualbox'
+# cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 #mas 'Xcode', id: 497799835
 
@@ -114,25 +114,25 @@ cask 'molotov'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
-mas 'iFlicks 2', id: 731062389
-mas 'Screeny', id: 440991524
+# mas 'iFlicks 2', id: 731062389
+# mas 'Screeny', id: 440991524
 
 # Musique
-cask 'spotify'
+# cask 'spotify'
 # cask 'xld'
 # mas 'Export for iTunes', id: 880764359
-mas 'I Love Stars', id: 402642760
+# mas 'I Love Stars', id: 402642760
 
 # Photo
 cask 'adobe-creative-cloud'
-mas 'gps4cam', id: 704400176
+# mas 'gps4cam', id: 704400176
 
 # Divertissement
-cask 'steam'
+# cask 'steam'
 
 # Communication
-cask 'colloquy'
-cask 'rambox'
+# cask 'colloquy'
+# cask 'rambox'
 # cask 'skype'
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
@@ -141,4 +141,3 @@ mas 'Tweetbot 3', id: 1384080005
 # cask 'libreoffice'
 cask 'macdown'
 cask 'netnewswire'
-cask 'notion'

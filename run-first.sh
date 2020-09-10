@@ -40,25 +40,14 @@ brew bundle
 # Installer version 6 de screenflow (plutôt que la dernière, dont je n'ai pas la license)
 brew cask install https://raw.githubusercontent.com/colindunn/homebrew-cask/9236cc83c732310b6308971d5d376369f5f78cf8/Casks/screenflow.rb
 
-echo "Installation des outils de développement Ruby"
+# echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
-sudo gem update --system --silent
+# sudo gem update --system --silent
 # Installation de Bundler
-sudo gem install bundler -n /usr/local/bin
+# sudo gem install bundler -n /usr/local/bin
 
 echo "Installation des outils de développement Node"
-# Installation de composants Node
 npm install -g npm-check-updates
-# npm install -g grunt
-# npm install -g grunt-cli
-
-echo "Installation d'applications en Node"
-# De meilleures aides en ligne : http://tldr.sh/
-npm install -g tldr
-
-echo "Finalisation de l'installation de Apache et PHP"
-brew services start httpd
-brew services start php
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut"
