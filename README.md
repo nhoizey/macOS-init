@@ -47,7 +47,7 @@ Voilà, c'est opérationnel.
 
 ## TL;DR réservé à Nicolas
 
-Cette automatisation supplémentaire lance directement l'installation de **ma propre sélection** d'applications pour mon ordinateur de travail :
+Cette automatisation supplémentaire lance directement l'installation de **ma propre sélection** d'applications pour mon ordinateur de travail, après connexion initiale au Mac App Store :
 
 ```shell
 $ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
