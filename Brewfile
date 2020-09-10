@@ -42,7 +42,7 @@ cask 'bartender'
 cask 'dozer'
 cask 'coconutbattery'
 cask 'jumpcut'
-cask 'rcdefaultapp'
+cask 'swiftdefaultappsprefpane'
 cask 'WebPQuickLook'
 mas 'Amphetamine', id: 937984704
 mas 'AutoMute', id: 1118136179
