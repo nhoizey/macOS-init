@@ -116,8 +116,6 @@ cask 'molotov'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
-# mas 'iFlicks 2', id: 731062389
-# mas 'Screeny', id: 440991524
 
 # Musique
 # cask 'spotify'
@@ -134,7 +132,6 @@ cask 'adobe-creative-cloud'
 
 # Communication
 # cask 'colloquy'
-# cask 'rambox'
 # cask 'skype'
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
