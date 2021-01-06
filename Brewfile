@@ -46,9 +46,10 @@ cask 'coconutbattery'
 cask 'jumpcut'
 cask 'swiftdefaultappsprefpane'
 cask 'WebPQuickLook'
+cask 'Rectangle'
 mas 'Amphetamine', id: 937984704
 mas 'AutoMute', id: 1118136179
-mas 'BetterSnapTool', id: 417375580
+# mas 'BetterSnapTool', id: 417375580
 
 # Utilitaires divers
 cask 'appcleaner'
