@@ -31,6 +31,9 @@ cask 'transmission'
 # cask 'tripmode'
 mas 'ForkLift', id: 412448059
 
+# Son
+# brew 'blackhole-2ch'
+
 # Terminal
 brew 'autojump'
 brew 'joe'
@@ -44,19 +47,21 @@ cask 'bartender'
 cask 'dozer'
 cask 'coconutbattery'
 cask 'jumpcut'
+cask 'MonitorControl'
 cask 'swiftdefaultappsprefpane'
 cask 'WebPQuickLook'
-cask 'Rectangle'
+# cask 'Rectangle'
 mas 'Amphetamine', id: 937984704
-mas 'AutoMute', id: 1118136179
+# mas 'AutoMute', id: 1118136179
 # mas 'BetterSnapTool', id: 417375580
 
 # Utilitaires divers
 cask 'appcleaner'
 cask 'appshelf'
-cask 'disk-inventory-x'
+# cask 'disk-inventory-x'
+cask 'grandperspective'
 cask 'unlox'
-cask 'muzzle'
+# cask 'muzzle'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
 cask 'quicklook-json'
@@ -74,6 +79,7 @@ cask 'google-drive-file-stream'
 
 # Web
 cask 'firefox'
+cask 'microsoft-edge'
 cask 'google-chrome'
 cask 'google-chrome-canary'
 
@@ -99,11 +105,11 @@ cask 'visual-studio-code'
 #mas 'Xcode', id: 497799835
 
 # Images
-brew 'graphicsmagick'
-brew 'gsl'
-brew 'imagemagick@6'
+# brew 'graphicsmagick'
+# brew 'gsl'
+# brew 'imagemagick@6'
 cask 'imageoptim'
-cask 'xnconvert'
+# cask 'xnconvert'
 mas 'Boxy SVG', id: 611658502
 mas 'Skitch', id: 425955336
 mas 'Sip', id: 507257563
@@ -132,8 +138,8 @@ cask 'adobe-creative-cloud'
 # cask 'steam'
 
 # Communication
-# cask 'colloquy'
 # cask 'skype'
+mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
 
