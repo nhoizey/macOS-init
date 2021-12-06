@@ -31,6 +31,7 @@ cask 'transmission'
 
 # Son
 # brew 'blackhole-2ch'
+brew 'bluesnooze'
 
 # Terminal
 brew 'autojump'
@@ -143,4 +144,5 @@ cask 'macdown'
 cask 'netnewswire'
 
 # TODO?
+# - Raycast
 # - ProtonVPN
