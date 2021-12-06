@@ -26,7 +26,6 @@ brew 'storm'
 brew 'wget'
 cask 'controlplane'
 cask 'lulu'
-# cask 'tigervpn'
 cask 'transmission'
 # cask 'tripmode'
 
@@ -142,3 +141,6 @@ mas 'Tweetbot 3', id: 1384080005
 # cask 'libreoffice'
 cask 'macdown'
 cask 'netnewswire'
+
+# TODO?
+# - ProtonVPN
