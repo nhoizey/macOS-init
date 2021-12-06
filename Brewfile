@@ -111,6 +111,7 @@ mas 'Skitch', id: 425955336
 # Vidéos
 brew 'ffmpeg'
 brew 'youtube-dl'
+brew 'yt-dlp/taps/yt-dlp'
 cask 'catch'
 cask 'handbrake'
 cask 'molotov'
