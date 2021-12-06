@@ -29,7 +29,6 @@ cask 'lulu'
 # cask 'tigervpn'
 cask 'transmission'
 # cask 'tripmode'
-mas 'ForkLift', id: 412448059
 
 # Son
 # brew 'blackhole-2ch'
@@ -43,11 +42,9 @@ brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
-cask 'bartender'
 cask 'dozer'
 cask 'coconutbattery'
 cask 'jumpcut'
-cask 'MonitorControl'
 cask 'swiftdefaultappsprefpane'
 cask 'WebPQuickLook'
 # cask 'Rectangle'
@@ -56,7 +53,6 @@ mas 'Amphetamine', id: 937984704
 # mas 'BetterSnapTool', id: 417375580
 
 # Utilitaires divers
-cask 'appcleaner'
 cask 'appshelf'
 # cask 'disk-inventory-x'
 cask 'grandperspective'
@@ -68,7 +64,6 @@ cask 'quicklook-json'
 cask 'yemuzip'
 mas '1Password', id: 443987910
 mas 'Glance', id: 1513574319
-mas 'Renamer', id: 402286241
 mas 'The Unarchiver', id: 425424353
 
 # Backup et synchro
@@ -112,7 +107,6 @@ cask 'imageoptim'
 # cask 'xnconvert'
 mas 'Boxy SVG', id: 611658502
 mas 'Skitch', id: 425955336
-mas 'Sip', id: 507257563
 
 # Vidéos
 brew 'ffmpeg'
