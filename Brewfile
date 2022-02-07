@@ -26,11 +26,11 @@ brew 'storm'
 brew 'wget'
 cask 'controlplane'
 cask 'lulu'
+cask 'protonvpn'
 cask 'transmission'
 # cask 'tripmode'
 
 # Son
-# brew 'blackhole-2ch'
 brew 'bluesnooze'
 
 # Terminal
@@ -42,29 +42,28 @@ brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
+cask 'barrier'
 cask 'dozer'
 cask 'coconutbattery'
 cask 'jumpcut'
+cask 'raycast'
 cask 'swiftdefaultappsprefpane'
-cask 'WebPQuickLook'
-# cask 'Rectangle'
 mas 'Amphetamine', id: 937984704
-# mas 'AutoMute', id: 1118136179
-# mas 'BetterSnapTool', id: 417375580
+
+# Quicklook plugins
+cask 'epubquicklook'
+cask 'webpquicklook'
 
 # Utilitaires divers
 cask 'appshelf'
-# cask 'disk-inventory-x'
 cask 'grandperspective'
 cask 'unlox'
-# cask 'muzzle'
 cask 'qlmarkdown'
 cask 'quicklook-csv'
 cask 'quicklook-json'
 cask 'yemuzip'
-mas '1Password', id: 443987910
-mas 'Glance', id: 1513574319
-mas 'The Unarchiver', id: 425424353
+mas '1Password 7 - Password Manager', id: 1333542190
+mas 'Glance - Quick Look Code Files', id: 1564688210
 
 # Backup et synchro
 brew 'mackup'
@@ -80,33 +79,21 @@ cask 'google-chrome-canary'
 
 # Développement
 brew 'git'
-# brew 'mariadb'
 brew 'node'
 brew 'pkg-config'
-# brew 'ruby'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 cask 'font-hack-nerd-font'
 cask 'ghostlab'
 cask 'github'
-# cask 'java6'
 cask 'meld'
 cask 'reflector'
-# cask 'sequel-pro'
-# cask 'virtualbox'
-# cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
-#mas 'Xcode', id: 497799835
 
 # Images
-# brew 'graphicsmagick'
-# brew 'gsl'
-# brew 'imagemagick@6'
 cask 'imageoptim'
-# cask 'xnconvert'
 mas 'Boxy SVG', id: 611658502
-mas 'Skitch', id: 425955336
 
 # Vidéos
 brew 'ffmpeg'
@@ -120,20 +107,15 @@ cask 'subsmarine'
 cask 'vlc'
 
 # Musique
-# cask 'spotify'
 # cask 'xld'
-# mas 'Export for iTunes', id: 880764359
-# mas 'I Love Stars', id: 402642760
 
 # Photo
 cask 'adobe-creative-cloud'
-# mas 'gps4cam', id: 704400176
 
 # Divertissement
 # cask 'steam'
 
 # Communication
-# cask 'skype'
 mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
@@ -143,6 +125,8 @@ mas 'Tweetbot 3', id: 1384080005
 cask 'macdown'
 cask 'netnewswire'
 
+# Misc
+cask 'yacreader'
+
 # TODO?
 # - Raycast
-# - ProtonVPN
