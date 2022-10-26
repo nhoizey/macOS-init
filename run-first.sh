@@ -119,6 +119,10 @@ defaults write com.apple.dock magnification -bool true
 # Taille maximale pour l'agrandissement
 defaults write com.apple.dock largesize -float 128
 
+# Ouverture accélérée
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.4
+
 ## MISSION CONTROL
 
 # Pas d'organisation des bureaux en fonction des apps ouvertes
