@@ -44,25 +44,18 @@ cask 'iterm2'
 # Améliorations d'interface et usage
 cask 'barrier'
 cask 'dozer'
-cask 'coconutbattery'
+# cask 'coconutbattery'
 cask 'jumpcut'
 cask 'raycast'
 cask 'swiftdefaultappsprefpane'
 mas 'Amphetamine', id: 937984704
 
-# Quicklook plugins
-cask 'epubquicklook'
-cask 'webpquicklook'
-
 # Utilitaires divers
+brew 'duti'
 cask 'appshelf'
 cask 'grandperspective'
-cask 'unlox'
-cask 'qlmarkdown'
-cask 'quicklook-csv'
-cask 'quicklook-json'
 cask 'yemuzip'
-mas '1Password 7 - Password Manager', id: 1333542190
+cask '1password'
 mas 'Glance - Quick Look Code Files', id: 1564688210
 
 # Backup et synchro
@@ -73,9 +66,9 @@ cask 'google-drive-file-stream'
 
 # Web
 cask 'firefox'
-cask 'microsoft-edge'
+# cask 'microsoft-edge'
 cask 'google-chrome'
-cask 'google-chrome-canary'
+# cask 'google-chrome-canary'
 
 # Développement
 brew 'git'
@@ -93,11 +86,11 @@ cask 'visual-studio-code'
 
 # Images
 cask 'imageoptim'
-mas 'Boxy SVG', id: 611658502
+# mas 'Boxy SVG', id: 611658502
 
 # Vidéos
 brew 'ffmpeg'
-brew 'youtube-dl'
+# brew 'youtube-dl'
 brew 'yt-dlp/taps/yt-dlp'
 cask 'catch'
 cask 'handbrake'
@@ -116,7 +109,7 @@ cask 'adobe-creative-cloud'
 # cask 'steam'
 
 # Communication
-mas 'LimeChat', id: 414030210
+# mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
 
