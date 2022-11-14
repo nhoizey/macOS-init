@@ -101,7 +101,6 @@ cask 'adobe-creative-cloud'
 
 # Communication
 # mas 'LimeChat', id: 414030210
-brew 'microsoft-teams'
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
 
