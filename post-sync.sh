@@ -16,7 +16,7 @@ defaults write com.apple.screencapture location -string "$HOME/Dropbox/Captures"
 echo "Configuration de dnsmasq"
 # http://passingcuriosity.com/2013/dnsmasq-dev-osx/
 if [ ! -e "/usr/local/etc/dnsmasq.conf" ]; then
-  ln -s ~/Dropbox/Settings/dnsmasq.conf $(brew prefix)/etc/dnsmasq.conf
+  echo 'address=/.test/127.0.0.1' >> $(brew --prefix)/etc/dnsmasq.conf
   sudo brew services start dnsmasq
 fi
 
