@@ -22,7 +22,7 @@ fi
 
 echo "Installation de oh-my-zsh"
 # Installation de oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Configuration de npm"
 # Change npm's config so it uses ^ (minor versions) by default when saving dependencies
