@@ -39,9 +39,6 @@ open -a Dropbox
 # et mettre à jour celles déjà présentes
 brew bundle
 
-# Installer version 6 de screenflow (plutôt que la dernière, dont je n'ai pas la license)
-brew install https://raw.githubusercontent.com/colindunn/homebrew-cask/1873c941cb21e9b0c13c785175c3d6eeb75d1f2d/Casks/screenflow.rb
-
 # echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
 # sudo gem update --system --silent
