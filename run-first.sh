@@ -23,7 +23,9 @@ then
 fi
 
 # Ajout des binaires Homebrew au PATH
-echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Mettre à jour la liste des applications disponibles
 brew update
