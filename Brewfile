@@ -48,6 +48,7 @@ brew 'duti'
 cask 'grandperspective'
 cask 'yemuzip'
 cask '1password'
+cask 'screenflow9'
 
 # Backup et synchro
 brew 'mackup'
