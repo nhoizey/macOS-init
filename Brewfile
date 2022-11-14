@@ -45,10 +45,11 @@ mas 'Amphetamine', id: 937984704
 
 # Utilitaires divers
 brew 'duti'
-cask 'grandperspective'
-cask 'yemuzip'
 cask '1password'
+cask 'deepl'
+cask 'grandperspective'
 cask 'screenflow9'
+cask 'yemuzip'
 
 # Backup et synchro
 brew 'mackup'
