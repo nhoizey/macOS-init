@@ -31,7 +31,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
 # Installer Dropbox au plus tôt pour lancer la synchro des settings
-brew cask install dropbox
+brew install dropbox
 echo "Ouverture de Dropbox pour commencer la synchronisation"
 open -a Dropbox
 
@@ -40,7 +40,7 @@ open -a Dropbox
 brew bundle
 
 # Installer version 6 de screenflow (plutôt que la dernière, dont je n'ai pas la license)
-brew cask install https://raw.githubusercontent.com/colindunn/homebrew-cask/9236cc83c732310b6308971d5d376369f5f78cf8/Casks/screenflow.rb
+brew install https://raw.githubusercontent.com/colindunn/homebrew-cask/1873c941cb21e9b0c13c785175c3d6eeb75d1f2d/Casks/screenflow.rb
 
 # echo "Installation des outils de développement Ruby"
 # Mise à jour de RubyGems
