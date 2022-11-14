@@ -24,7 +24,6 @@ brew 'openssl'
 brew 'rsync'
 brew 'wget'
 cask 'controlplane'
-cask 'lulu'
 cask 'protonvpn'
 cask 'transmission'
 # cask 'tripmode'
@@ -39,9 +38,7 @@ cask 'iterm2'
 
 # Améliorations d'interface et usage
 cask 'barrier'
-cask 'dozer'
 # cask 'coconutbattery'
-cask 'jumpcut'
 cask 'raycast'
 cask 'swiftdefaultappsprefpane'
 mas 'Amphetamine', id: 937984704
@@ -72,7 +69,6 @@ brew 'pkg-config'
 cask 'font-fira-code'
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 cask 'font-hack-nerd-font'
-cask 'ghostlab'
 cask 'github'
 cask 'meld'
 cask 'reflector'
@@ -84,8 +80,7 @@ cask 'imageoptim'
 
 # Vidéos
 brew 'ffmpeg'
-# brew 'youtube-dl'
-brew 'yt-dlp/taps/yt-dlp'
+brew 'yt-dlp'
 cask 'catch'
 cask 'handbrake'
 cask 'molotov'
@@ -114,6 +109,3 @@ cask 'netnewswire'
 
 # Misc
 cask 'yacreader'
-
-# TODO?
-# - Raycast
