@@ -22,16 +22,12 @@ brew 'dnsmasq', restart_service: true
 brew 'openssh'
 brew 'openssl'
 brew 'rsync'
-brew 'storm'
 brew 'wget'
 cask 'controlplane'
 cask 'lulu'
 cask 'protonvpn'
 cask 'transmission'
 # cask 'tripmode'
-
-# Son
-brew 'bluesnooze'
 
 # Terminal
 brew 'autojump'
@@ -52,11 +48,9 @@ mas 'Amphetamine', id: 937984704
 
 # Utilitaires divers
 brew 'duti'
-cask 'appshelf'
 cask 'grandperspective'
 cask 'yemuzip'
 cask '1password'
-mas 'Glance - Quick Look Code Files', id: 1564688210
 
 # Backup et synchro
 brew 'mackup'
