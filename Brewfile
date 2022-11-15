@@ -40,6 +40,7 @@ cask 'iterm2'
 cask 'barrier'
 # cask 'coconutbattery'
 cask 'raycast'
+cask 'setapp'
 cask 'swiftdefaultappsprefpane'
 mas 'Amphetamine', id: 937984704
 
