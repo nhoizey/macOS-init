@@ -21,6 +21,7 @@ brew 'curl'
 brew 'dnsmasq', restart_service: true
 brew 'openssh'
 brew 'openssl'
+brew 'openvpn'
 brew 'rsync'
 brew 'wget'
 cask 'controlplane'
