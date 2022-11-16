@@ -55,9 +55,10 @@ cask 'yemuzip'
 
 # Backup et synchro
 brew 'mackup'
-cask 'carbon-copy-cloner'
 cask 'backblaze'
+cask 'carbon-copy-cloner'
 cask 'google-drive-file-stream'
+cask 'synology-drive'
 
 # Web
 cask 'firefox'
