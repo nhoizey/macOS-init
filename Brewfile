@@ -103,6 +103,8 @@ cask 'adobe-creative-cloud'
 # cask 'steam'
 
 # Communication
+cask 'signal'
+cask 'whatsapp'
 # mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
