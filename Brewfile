@@ -76,6 +76,7 @@ cask 'font-fira-code'
 cask 'font-hack-nerd-font'
 cask 'github'
 cask 'meld'
+cask 'polypane'
 cask 'reflector'
 cask 'visual-studio-code'
 
