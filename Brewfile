@@ -110,10 +110,11 @@ cask 'whatsapp'
 mas 'Slack', id: 803453959
 mas 'Tweetbot 3', id: 1384080005
 
-# Bureautique
+# Bureautique et productivité
 # cask 'libreoffice'
 cask 'macdown'
 cask 'netnewswire'
+cask 'obsidian'
 
 # Misc
 cask 'yacreader'
