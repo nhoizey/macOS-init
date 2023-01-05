@@ -32,6 +32,7 @@ cask 'transmission'
 # Terminal
 brew 'autojump'
 brew 'joe'
+brew 'starship'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
