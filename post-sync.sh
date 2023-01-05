@@ -11,7 +11,7 @@ echo -e "[storage]\nengine = icloud" >> ~/.mackup.cfg
 mackup restore -n
 
 # Enregistrement des copies d'écran sur Dropbox
-defaults write com.apple.screencapture location -string "$HOME/Dropbox/Captures"
+defaults write com.apple.screencapture location -string "$HOME/Synology/Personnel/Captures"
 
 echo "Configuration de dnsmasq"
 # http://passingcuriosity.com/2013/dnsmasq-dev-osx/
@@ -20,9 +20,9 @@ if [ ! -e "/usr/local/etc/dnsmasq.conf" ]; then
   sudo brew services start dnsmasq
 fi
 
-echo "Installation de oh-my-zsh"
+# echo "Installation de oh-my-zsh"
 # Installation de oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Configuration de npm"
 # Change npm's config so it uses ^ (minor versions) by default when saving dependencies
