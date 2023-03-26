@@ -39,6 +39,7 @@ brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
 # Améliorations d'interface et usage
+brew 'glance-chamburr'
 cask 'barrier'
 # cask 'coconutbattery'
 cask 'raycast'
