@@ -124,3 +124,73 @@ cask 'obsidian'
 
 # Misc
 cask 'yacreader'
+
+# -----------------------------------------------------------------------------
+# Visual Studio Code extensions
+# -----------------------------------------------------------------------------
+
+# TODO: check if those extensions are all really useful
+
+# Must have
+vscode "nhoizey.gremlins"
+
+# VS Code UI
+vscode "MS-CEINTL.vscode-language-pack-fr"
+vscode "johnpapa.vscode-peacock"
+
+# Working with text
+vscode "medo64.render-crlf"
+vscode "timonwong.shellcheck"
+vscode "sandcastle.whitespace"
+vscode "brunnerh.insert-unicode"
+vscode "zeithaste.cursorCharCode"
+
+# HTML tools
+vscode "formulahendry.auto-close-tag"
+vscode "formulahendry.auto-rename-tag"
+vscode "vincaslt.highlight-matching-tag"
+
+# Files and folders manipulations
+vscode "moshfeu.compare-folders"
+vscode "mrmlnc.vscode-duplicate"
+
+# Git tools
+vscode "eamodio.gitlens"
+
+# npm tools
+vscode "wix.vscode-import-cost"
+vscode "christian-kohler.npm-intellisense"
+vscode "pflannery.vscode-versionlens"
+
+# File formats/colorizer
+vscode "tamasfe.even-better-toml"
+vscode "mrmlnc.vscode-apache"
+vscode "sharat.vscode-brewfile"
+vscode "github.vscode-github-actions"
+vscode "mikestead.dotenv"
+vscode "ronnidc.nunjucks"
+vscode "SomewhatStationery.some-sass"
+vscode "joshbolduc.story-explorer"
+vscode "jock.svg"
+
+# Markdown tools
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "darkriszty.markdown-table-prettify"
+vscode "DavidAnson.vscode-markdownlint"
+vscode "unifiedjs.vscode-mdx"
+
+# Noctis Theme
+vscode "liviuschera.noctis"
+
+# Code formater/beautifier
+vscode "esbenp.prettier-vscode"
+vscode "mohsen1.prettify-json"
+vscode "stylelint.vscode-stylelint"
+
+# Miscelanous
+vscode "oderwat.indent-rainbow"
+vscode "christian-kohler.path-intellisense"
+vscode "MohammadBaqer.better-folding"
+vscode "kamikillerto.vscode-colorize"
+vscode "GitHub.copilot"
+vscode "aaron-bond.better-comments"
