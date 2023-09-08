@@ -112,7 +112,8 @@ cask 'signal'
 cask 'whatsapp'
 # mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
-mas 'Tweetbot 3', id: 1384080005
+# mas 'Tweetbot 3', id: 1384080005
+mas 'Ivory for Mastodon by Tapbots', id: 6444602274
 
 # Bureautique et productivité
 # cask 'libreoffice'
