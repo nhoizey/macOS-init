@@ -30,10 +30,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Mettre à jour la liste des applications disponibles
 brew update
 
-# Installer Dropbox au plus tôt pour lancer la synchro des settings
-brew install dropbox
-echo "Ouverture de Dropbox pour commencer la synchronisation"
-open -a Dropbox
+# Installer Synology Drive au plus tôt pour lancer la synchro des settings
+echo "Installing Synology Drive first to start settings synchronization"
+brew install synology-drive
+
+echo "Running Synology Drive"
+echo "ℹ️ Personal folder (in which Mackup is) should be '~/Synology/Personnel/'"
+open -a "Synology Drive Client"
 
 # Installer les nouvelles applications du bundle Brewfile
 # et mettre à jour celles déjà présentes

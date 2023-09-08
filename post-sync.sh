@@ -5,7 +5,7 @@
 
 echo "Restauration des préférences"
 # Sélection du service de cloud (à décommenter si vous n'utilisez pas Dropbox, c'est le service par défaut) : https://github.com/lra/mackup/blob/master/doc/README.md
-# echo -e "[storage]\nengine = icloud" >> ~/.mackup.cfg
+echo -e "[storage]\nengine = file_system\npath = Synology/Personnel" >> ~/.mackup.cfg
 
 # Récupération de la sauvegarde sans demander à chaque fois l'autorisation
 mackup restore -n
