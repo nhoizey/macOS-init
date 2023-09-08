@@ -1,7 +1,8 @@
-# Utiliser Homebrew bundle
 # https://github.com/Homebrew/homebrew-bundle
 
-# Taps
+# -----------------------------------------------------------------------------
+# Homebrew taps
+# -----------------------------------------------------------------------------
 
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
@@ -10,13 +11,21 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 tap 'nhoizey/cask'
 
-# Définir où placer les applications installées
+# -----------------------------------------------------------------------------
+# Settings
+# -----------------------------------------------------------------------------
+
+# Define where to put installed applications
 cask_args appdir: '/Applications'
 
-# Permettre l'installation d'applications de l'AppStore
+# Allow installation of AppStore applications
 brew 'mas'
 
-# Réseau
+# -----------------------------------------------------------------------------
+# Applications to install
+# -----------------------------------------------------------------------------
+
+# Network
 brew 'curl'
 brew 'dnsmasq', restart_service: true
 brew 'openssh'
@@ -25,9 +34,9 @@ brew 'openvpn'
 brew 'rsync'
 brew 'wget'
 cask 'controlplane'
+cask 'ngrok'
 cask 'protonvpn'
 cask 'transmission'
-# cask 'tripmode'
 
 # Terminal
 brew 'autojump'
@@ -38,40 +47,40 @@ brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
 cask 'iterm2'
 
-# Améliorations d'interface et usage
+# UI and usage
 brew 'glance-chamburr'
 cask 'barrier'
-# cask 'coconutbattery'
 cask 'raycast'
 cask 'setapp'
 cask 'swiftdefaultappsprefpane'
 mas 'Amphetamine', id: 937984704
 
-# Utilitaires divers
+# Misc utilities
 brew 'duti'
 cask '1password'
 cask 'deepl'
 cask 'enca'
+cask 'jq'
+cask 'keeper-password-manager'
 cask 'grandperspective'
 cask 'screenflow9'
 cask 'yemuzip'
 
-# Backup et synchro
+# Backup and sync
 brew 'mackup'
 cask 'backblaze'
 cask 'carbon-copy-cloner'
 cask 'google-drive-file-stream'
-cask 'synology-drive'
 
 # Web
 cask 'firefox'
-# cask 'microsoft-edge'
 cask 'google-chrome'
-# cask 'google-chrome-canary'
+cask 'google-chrome-canary'
 
-# Développement
+# Development
 brew 'git'
 brew 'node'
+brew 'nvm'
 brew 'pkg-config'
 # https://github.com/tonsky/FiraCode/wiki#installing-font
 cask 'font-fira-code'
@@ -85,39 +94,31 @@ cask 'visual-studio-code'
 
 # Images
 cask 'imageoptim'
-# mas 'Boxy SVG', id: 611658502
 
-# Vidéos
+# Videos
 brew 'ffmpeg'
 brew 'yt-dlp'
 cask 'autosubsync'
 cask 'catch'
 cask 'handbrake'
 cask 'mkvtoolnix'
+cask 'plex'
 cask 'subler'
 cask 'subsmarine'
 cask 'vlc'
 
-# Musique
-# cask 'xld'
-
 # Photo
 cask 'adobe-creative-cloud'
-
-# Divertissement
-# cask 'steam'
 
 # Communication
 cask 'signal'
 cask 'whatsapp'
-# mas 'LimeChat', id: 414030210
 mas 'Slack', id: 803453959
-# mas 'Tweetbot 3', id: 1384080005
 mas 'Ivory for Mastodon by Tapbots', id: 6444602274
 
-# Bureautique et productivité
-# cask 'libreoffice'
+# Office and productivity
 cask 'macdown'
+cask 'microsoft-teams'
 cask 'netnewswire'
 cask 'obsidian'
 
