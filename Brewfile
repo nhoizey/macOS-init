@@ -70,6 +70,7 @@ cask 'yemuzip'
 brew 'mackup'
 cask 'backblaze'
 cask 'carbon-copy-cloner'
+cask 'dropbox'
 cask 'google-drive-file-stream'
 
 # Web
