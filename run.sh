@@ -1,7 +1,8 @@
 #!/bin/sh
 
 ## README
-# /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
+# /!\ This installation script is designed for my OWN use.
+#     Do not run it without checking each command!
 
 mkdir $HOME/Downloads/macOS-init
 cd $HOME/Downloads/macOS-init

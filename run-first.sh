@@ -236,21 +236,20 @@ sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 
 ## IMAGES
 
-# Enregistrer les screenshots en PNG (autres options: BMP, GIF, JPG, PDF, TIFF)
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Mettre une ombre sur les screenshots
+# Enable shadows in screenshots
 defaults write com.apple.screencapture disable-shadow -bool false
 
-## ************ Fin de l'installation *********
-echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
+echo "Restarting Finder and Dock. You'll need to restart the computer to complete."
 killall Dock
 killall Finder
 
-echo "Derniers nettoyages…"
+echo "Cleaning…"
 brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
 
 echo ""
 echo "ET VOILÀ !"
-echo "Après synchronisation des données Synology Drive (seuls les dossiers « Mackup » et « Settings » sont nécessaires dans un premier temps), lancer le script post-cloud.sh"
+echo "Once you have synchronized your Synology Drive data (initially only the "Mackup" and "Settings" folders are required), run the post-cloud.sh script"
