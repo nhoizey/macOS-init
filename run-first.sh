@@ -1,36 +1,34 @@
 #!/bin/sh
 
 ## README
-# /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
+# /!\ This installation script is designed for my OWN use.
+#     Do not run it without checking each command!
 
-# Sources :
+# Inspirations:
 # https://github.com/nicolinuxfr/macOS-post-installation
 # https://www.macg.co/logiciels/2017/02/comment-synchroniser-les-preferences-des-apps-avec-mackup-97442
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
-# Demande du mot de passe administrateur dès le départ
+echo "Asking the the administrator password upfront"
 sudo -v
 
-# Keep-alive: met à jour le timestamp de `sudo`
-# tant que `post-install.sh` n'est pas terminé
+# Keep-alive: updates the `sudo` timestamp until `post-install.sh` is finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-## LA BASE : Homebrew et les lignes de commande
-if test ! $(which brew)
+if test ! "$(which brew)"
 then
-  echo "Installation de Homebrew"
+  echo "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Ajout des binaires Homebrew au PATH
+echo "Adding Homebrew binaries to the PATH"
 echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Mettre à jour la liste des applications disponibles
+echo "Update the list of applications available with Homebrew"
 brew update
 
-# Installer Synology Drive au plus tôt pour lancer la synchro des settings
 echo "Installing Synology Drive first to start settings synchronization"
 brew install synology-drive
 
@@ -38,103 +36,106 @@ echo "Running Synology Drive"
 echo "ℹ️ Personal folder (in which Mackup is) should be '~/Synology/Personnel/'"
 open -a "Synology Drive Client"
 
-# Installer les nouvelles applications du bundle Brewfile
-# et mettre à jour celles déjà présentes
+echo "Installing most applications with Homebrew and Mac App Store CLI"
 brew bundle
 
-# echo "Installation des outils de développement Ruby"
-# Mise à jour de RubyGems
-# sudo gem update --system --silent
-# Installation de Bundler
-# sudo gem install bundler -n /usr/local/bin
+# Allow certain applications to be launched despite the quarantine
+# TODO: update the list with all applications requiring this
+sudo xattr -dr com.apple.quarantine /Applications/Firefox.app
+sudo xattr -dr com.apple.quarantine /Applications/Google\ Chrome.app
+sudo xattr -dr com.apple.quarantine /Applications/iTerm.app
+sudo xattr -dr com.apple.quarantine /Applications/Visual\ Studio\ Code.app
 
-echo "Installation des outils de développement Node"
+echo "Installation of Node development tools"
 npm install -g npm-check-updates
 
-## ************************* CONFIGURATION ********************************
-echo "Configuration de quelques paramètres par défaut"
+# -----------------------------------------------------------------------------
+# Configuration
+# -----------------------------------------------------------------------------
 
-# Fermer les fenêtres "Préférences Système"
+echo "Setting some default parameters"
+
+# Close "System Preferences" windows
 osascript -e 'tell application "System Preferences" to quit'
 
-## FINDER
+# FINDER
 
-# Affichage de la bibliothèque
-# chflags nohidden ~/Library
+# Displaying the Library folder (hidden by default)
+chflags nohidden ~/Library
 
-# Affichage de la barre latérale
+# Displaying the sidebar
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Afficher par défaut en mode colonne
+# Default display in column mode
 # Flwv ▸ Cover Flow View
 # Nlsv ▸ List View
 # clmv ▸ Column View
 # icnv ▸ Icon View
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
-# Afficher le chemin d'accès
+# Show access path
 defaults write com.apple.finder ShowPathbar -bool true
 
-# Affichage de toutes les extensions
+# Display all file extensions
 sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Afficher le dossier maison par défaut
+# Show home folder as default in new Finder windows
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
-# Supprimer les doublons dans le menu "ouvrir avec…"
+# Delete duplicates in the "Open with..." menu
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
-# Recherche dans le dossier en cours par défaut
+# Search in current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Fenêtre de sauvegarde complète par défaut
+# Full save window by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-# Fenêtre d'impression complète par défaut
+# Full print window by default
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
-# Sauvegarde sur disque (et non sur iCloud) par défaut
+# Save to disk (not iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Coup d'œil : sélection de texte
+# Text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Ne pas alerter en cas de modification de l'extension d'un fichier
+# Do not alert if file extension is modified
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Pas de création de fichiers .DS_STORE sur les disques réseau et externes
+# No creation of .DS_STORE files on network and external disks
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Supprimer l'alerte de quarantaine des applications
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Remove application quarantine alert
+# defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 ## DOCK
 
-# Taille minimum
+# Minimum size
 defaults write com.apple.dock tilesize -int 32
 
-# Agrandissement actif
+# Active magnification
 defaults write com.apple.dock magnification -bool true
 
-# Taille maximale pour l'agrandissement
+# Maximum size for magnification
 defaults write com.apple.dock largesize -float 128
 
-# Ouverture accélérée
+# Accelerated opening
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.4
 
 ## MISSION CONTROL
 
-# Pas d'organisation des bureaux en fonction des apps ouvertes
+# No organization of desktops according to open apps
 defaults write com.apple.dock mru-spaces -bool false
 
-# Mot de passe demandé immédiatement quand l'économiseur d'écran s'active
+# Password requested immediately when screen saver activates
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-## COINS ACTIFS
+## ACTIVE CORNERS
 
 #  0: no-op
 #  2: Mission Control
@@ -147,79 +148,90 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # 11: Launchpad
 # 12: Notification Center
 
-# En haut à gauche : bureau
+# Top left: desktop
 # defaults write com.apple.dock wvous-tl-corner -int 4
 # defaults write com.apple.dock wvous-tl-modifier -int 0
 
-# En haut à droite : screensaver
+# Top right: screensaver
 defaults write com.apple.dock wvous-tr-corner -int 5
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
-# En bas à gauche : fenêtres de l'application
+# Bottom left: application windows
 # defaults write com.apple.dock wvous-bl-corner -int 3
 # defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# En bas à droite : Mission Control
+# Bottom right: Mission Control
 # defaults write com.apple.dock wvous-br-corner -int 2
 # defaults write com.apple.dock wvous-br-modifier -int 0
 
-## CLAVIER ET TRACKPAD
+## KEYBOARD AND TRACKPAD
 
-# Accès au clavier complet (tabulation dans les boîtes de dialogue)
+# Enable full keyboard access for all controls (enable Tab in modal dialogs)
 sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Arrêt pop-up clavier façon iOS
+# Disable press-and-hold for keys in favor of key repeat
 sudo defaults write -g ApplePressAndHoldEnabled -bool false
 
-# Répétition touches plus rapide
+# Set fast keyboard repeat rate
 sudo defaults write NSGlobalDomain KeyRepeat -int 1
-# Délai avant répétition des touches
 sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-# Trackpad : toucher pour cliquer
+# Enable tap to click on Trackpad
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Souris : glisser une fenêtre de n'importe où avec ^ + Cmd
+# To drag a window from anywhere, not just the top bar, with ^ + Cmd
 defaults write -g NSWindowShouldDragOnGesture -bool true
 
 ## APPS
 
-# Vérifier la disponibilité de mise à jour quotidiennement
+# Check availability of updates daily
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-# Vérifier les mises à jour automatiquement
+# Check for updates automatically
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
-# Safari : menu développeur / URL en bas à gauche / URL complète en haut / Do Not Track / affichage barre favoris
-defaults write com.apple.safari IncludeDevelopMenu -int 1
+# Safari: enable the Develop menu and the Web Inspector
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+
+# Safari: show the status bar
 defaults write com.apple.safari ShowOverlayStatusBar -int 1
+
+# Safari: show the full URL in the address bar (note: this will still hide the scheme)
 defaults write com.apple.safari ShowFullURLInSmartSearchField -int 1
+
+# Safari: do not track
 defaults write com.apple.safari SendDoNotTrackHTTPHeader -int 1
+
+# Safari: show bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool true
 
-# Chrome : désactiver la navigation dans l'historique au swipe
+# Disable back gesture
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write org.mozilla.firefox AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write com.apple.Safari AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
-# Photos : pas d'affichage pour les iPhone
+# Photos: no display for iPhones
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 
-# TextEdit : .txt par défaut
+# TextEdit: .txt as default extension
 defaults write com.apple.TextEdit RichText -int 0
 
-# TextEdit : ouvre et enregistre les fichiers en UTF-8
+# TextEdit: open and save files in UTF-8
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-## iTerm2 : ne pas afficher d'alerte à la fermeture
+## iTerm2: do not display a closing alert
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-## SONS
+## SOUND
 
-# Démarrer en silence
+# Silent start
 sudo nvram SystemAudioVolume="%00"
 
-# Alertes sonores quand on modifie le volume
+# Audible alerts when the volume is changed
 sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 
 ## IMAGES
@@ -241,4 +253,4 @@ rm -f -r /Library/Caches/Homebrew/*
 
 echo ""
 echo "ET VOILÀ !"
-echo "Après synchronisation des données Dropbox (seuls les dossiers « Mackup » et « Settings » sont nécessaires dans un premier temps), lancer le script post-cloud.sh"
+echo "Après synchronisation des données Synology Drive (seuls les dossiers « Mackup » et « Settings » sont nécessaires dans un premier temps), lancer le script post-cloud.sh"
