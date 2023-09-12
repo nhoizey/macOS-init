@@ -3,6 +3,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/macOS-init.svg?style=for-the-badge&logo=github)](https://github.com/nhoizey/macOS-init/stargazers)
 [![Follow @nhoizey@mamot.fr](https://img.shields.io/mastodon/follow/000262395?domain=https%3A%2F%2Fmamot.fr&style=for-the-badge&logo=mastodon&logoColor=white&color=6364FF)](https://mamot.fr/@nhoizey)
 
+This set of scripts automate installtion of applications and synchronization of settings on a freshly installed macOS.
+
 > **Warning**
 > This script was designed for **my own specific needs**.
 > Before using it, remember to modify it to suit your needs!
@@ -24,9 +26,9 @@
 
 ### First step
 
-1. Download the latest version: [master.zip](https://github.com/nhoizey/macOS-init/archive/master.zip)
+1. Download the latest version: [main.zip](https://github.com/nhoizey/macOS-init/archive/main.zip)
 1. Open the `run-first.sh` and `Brewfile` files, and change what is installed by default
-1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) depending on the Cloud service you are using for settings synchronization
+1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/main/post-install.sh) depending on the Cloud service you are using for settings synchronization
 1. Starting from the line `# Configuration` in the `run-first.sh` file, the script configures a number of default settings, which you can modify as required
 1. Then [open macOS terminal](https://www.wikihow.tech/Use-Terminal-on-Mac#Opening-Terminal), drag and drop the `run-first.sh` file from the Finder to the Terminal, press the <kbd>Enter</kbd> key, and fasten your seatbelt… 😁
 
