@@ -3,6 +3,12 @@
 ## README
 # /!\ This installation script is designed for my OWN use.
 #     Do not run it without checking each command!
+#
+# This additional automation directly launches the installation of
+# **my own selection** of applications for **my own computer**,
+# after initial connection to the Mac App Store:
+#
+# $ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
 
 mkdir $HOME/Downloads/macOS-init
 cd $HOME/Downloads/macOS-init
