@@ -12,7 +12,7 @@ This set of scripts automate the installation of applications and synchronizatio
 ## Presentation
 
 > **Note**
-> I wrote a blog post, in French, about this tool: [Automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/2017/05/automatiser-l-installation-des-applications-sur-un-nouveau-mac.html).
+> I wrote a blog post, in French, about this tool: [Automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/articles/2017/05/02/automatiser-l-installation-des-applications-sur-un-nouveau-mac/).
 
 ## Usage
 
