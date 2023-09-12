@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/macOS-init.svg?style=for-the-badge&logo=github)](https://github.com/nhoizey/macOS-init/stargazers)
 [![Follow @nhoizey@mamot.fr](https://img.shields.io/mastodon/follow/000262395?domain=https%3A%2F%2Fmamot.fr&style=for-the-badge&logo=mastodon&logoColor=white&color=6364FF)](https://mamot.fr/@nhoizey)
 
-This set of scripts automate installtion of applications and synchronization of settings on a freshly installed macOS.
+This set of scripts automate the installation of applications and synchronization of settings, on a freshly installed macOS.
 
 > **Warning**
 > This script was designed for **my own specific needs**.
