@@ -1,60 +1,50 @@
-**⚠️ Ce script a été conçu pour mes besoins. Avant de l'utiliser pensez bien [à le modifier](https://github.com/nhoizey/macOS-init#comment-lutiliser) en fonction de vos besoins ! ⚠️**
+# macOS init
 
-## Présentation
+> **Warning**
+> This script was designed for **my own specific needs**.
+> Before using it, remember to modify it to suit your needs!
 
-Voir la présentation détaillée dans mon billet de blog « [automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/2017/05/automatiser-l-installation-des-applications-sur-un-nouveau-mac.html) ».
+## Presentation
 
-ℹ️ Si vous n'êtes pas sur macOS mais plutôt sur Ubuntu, vous vous êtes trompé d'endroit. Mais Jean-Yves a une solution similaire pour vous avec son [Ubuntu Installer basé sur Ansible](https://github.com/jygastaud/ubuntu-installer).
+> **Note**
+> I wrote a blog post, in French, about this tool: [Automatiser l'installation des applications sur un nouveau Mac](https://nicolas-hoizey.com/2017/05/automatiser-l-installation-des-applications-sur-un-nouveau-mac.html).
 
-## Utilisation
+## Usage
 
-### Installation initiale de l'OS vierge
+### Initial installation of a pristine OS
 
-1. Installez macOS
-1. Lancez le Mac App Store et connectez-vous à votre compte
+1. Install macOS
+1. Run Mac App Store and log in to your account
 
-⚠️ Attention, si vous migrez depuis une autre machine ou faites une réinstallation complète, utilisez tant que possible le même _username_, sinon Mackup ne fera pas les bonnes actions pour récupérer les paramètres des applications.
+> **Warning**
+> Please note that if you are migrating from another machine or doing a complete reinstall, use the same _username_ as much as possible, otherwise Mackup won't be able to recover application settings.
 
-### Première étape
+### First step
 
-1. Téléchargez la dernière version du projet ([lien direct](https://github.com/nhoizey/macOS-init/archive/master.zip)) ;
-1. Ouvrez les fichiers `run-first.sh` et `Brewfile`, et modifiez ce qui est installé par défaut ;
-1. Pensez à changer les lignes `brew cask install dropbox` et `open -a Dropbox` de [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) en fonction du service Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez ;
-1. À partir de la ligne `## *** CONFIGURATION ***`, le script configure quelques réglages par défaut, à modifier selon vos besoins ;
-1. [Ouvrez ensuite le Terminal de macOS](http://fr.wikihow.com/ouvrir-le-Terminal-sur-un-Mac), glissez le fichier `run-first.sh` depuis le Finder vers le Terminal, et appuyez sur la touche <kbd>Entrée</kbd> et accrochez votre ceinture ;
+1. Download the latest version: [master.zip](https://github.com/nhoizey/macOS-init/archive/master.zip)
+1. Open the `run-first.sh` and `Brewfile` files, and change what is installed by default
+1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/master/post-install.sh) depending on the Cloud service you are using for settings synchronization
+1. Starting from the line `# Configuration` in the `run-first.sh` file, the script configures a number of default settings, which you can modify as required
+1. Then [open macOS terminal](https://www.wikihow.tech/Use-Terminal-on-Mac#Opening-Terminal), drag and drop the `run-first.sh` file from the Finder to the Terminal, press the <kbd>Enter</kbd> key, and fasten your seatbelt… 😁
 
-Le script fonctionnera largement sans votre intervention, sauf :
+The script will largely work without your intervention, except :
 
-- pour valider l'installation de Homebrew ;
-- pour saisir le mot de passe administrateur pour Homebrew ;
-- pour le mot de passe administrateur nécessaire pour Cask ;
-- pour certains logiciels qui nécessitent un accès admin ;
+- to validate the installation of Homebrew
+- to enter the administrator password for Homebrew
+- for the administrator password needed for Cask
+- for certain software that requires admin access
 
-Si tout va bien, il se terminera normalement sans erreur, mais en cas d'erreur, vous pourrez relancer le script et seul ce qui n'a pas déjà été installé, sera installé ;
+If all goes well, it will finish normally without error, but if there is an error, you can restart the script and only what has not already been installed will be installed;
 
-### Seconde étape
+### Second step
 
-Quand le premier script est terminé, et quand vos données sont synchronisées depuis le cloud :
+When the first script run is complete, and your data is synchronized from the cloud:
 
-1. Ouvrez le fichier `post-sync.sh` et modifiez la [ligne 8](https://github.com/nhoizey/macOS-init/blob/master/post-cloud.sh#L8) en fonction du service de Cloud choisi, ou laissez-la en commentaire si vous utilisez Dropbox (choix par défaut) ;
-1. Glissez le fichier `post-sync.sh` du Finder vers le Terminal, et appuyez sur la touche <kbd>Entrée</kbd> pour finir l'installation.
+1. Open the `post-sync.sh` file and modify the begining according to the Cloud service you have chosen, or comment it if you are using Dropbox (the default choice for Mackup)
+1. Drag and drop the `post-sync.sh` file from the Finder to the Terminal, and press the <kbd>Enter</kbd> key to finish installation.
 
-Voilà, c'est opérationnel.
+That's it, you're ready to start using your new computer.
 
-### Mises à jour ultérieures
+### Later updates
 
-1. Lancez le script `update.sh` pour mettre à jour toutes les applications qui le nécessitent.
-
-## TL;DR réservé à Nicolas
-
-Cette automatisation supplémentaire lance directement l'installation de **ma propre sélection** d'applications pour mon ordinateur de travail, après connexion initiale au Mac App Store :
-
-```shell
-$ curl -sfL https://nhoizey.github.io/macOS-init/run.sh | sh
-```
-
-Voici de même pour mon ordinateur personnel à domicile (voir la branche "home") :
-
-```shell
-$ curl -sfL https://nhoizey.github.io/macOS-init/run-home.sh | sh
-```
+1. Run the `update.sh` script to update any applications that require it.
