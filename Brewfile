@@ -67,7 +67,6 @@ cask 'screenflow9'
 cask 'yemuzip'
 
 # Backup and sync
-brew 'mackup'
 cask 'backblaze'
 cask 'carbon-copy-cloner'
 cask 'dropbox'
