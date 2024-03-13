@@ -15,5 +15,5 @@ cd $HOME/Downloads/macOS-init
 curl -sL https://github.com/nhoizey/macOS-init/archive/main.zip -o main.zip
 unzip -qj main.zip
 rm main.zip for-nhoizey.sh
-chmod +x run-first.sh post-sync.sh
-./run-first.sh
+chmod +x run.sh
+./run.sh
