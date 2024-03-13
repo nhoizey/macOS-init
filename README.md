@@ -21,16 +21,13 @@ This set of scripts automate the installation of applications and synchronizatio
 1. Install macOS
 1. Run Mac App Store and log in to your account
 
-> **Warning**
-> Please note that if you are migrating from another machine or doing a complete reinstall, use the same _username_ as much as possible, otherwise Mackup won't be able to recover application settings.
-
 ### First step
 
 1. Download the latest version: [main.zip](https://github.com/nhoizey/macOS-init/archive/main.zip)
-1. Open the `run-first.sh` and `Brewfile` files, and change what is installed by default
-1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/main/post-install.sh) depending on the Cloud service you are using for settings synchronization
-1. Starting from the line `# Configuration` in the `run-first.sh` file, the script configures a number of default settings, which you can modify as required
-1. Then [open macOS terminal](https://www.wikihow.tech/Use-Terminal-on-Mac#Opening-Terminal), drag and drop the `run-first.sh` file from the Finder to the Terminal, press the <kbd>Enter</kbd> key, and fasten your seatbelt… 😁
+1. Open the `run.sh` and `Brewfile` files, and change what is installed by default
+1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/main/run.sh) depending on the Cloud service you are using
+1. Starting from the line `# Configuration` in the `run.sh` file, the script configures a number of default settings, which you can modify as required
+1. Then [open macOS terminal](https://www.wikihow.tech/Use-Terminal-on-Mac#Opening-Terminal), drag and drop the `run.sh` file from the Finder to the Terminal, press the <kbd>Enter</kbd> key, and fasten your seatbelt… 😁
 
 The script will largely work without your intervention, except :
 
@@ -41,14 +38,7 @@ The script will largely work without your intervention, except :
 
 If all goes well, it will finish normally without error, but if there is an error, you can restart the script and only what has not already been installed will be installed;
 
-### Second step
-
-When the first script run is complete, and your data is synchronized from the cloud:
-
-1. Open the `post-sync.sh` file and modify the begining according to the Cloud service you have chosen, or comment it if you are using Dropbox (the default choice for Mackup)
-1. Drag and drop the `post-sync.sh` file from the Finder to the Terminal, and press the <kbd>Enter</kbd> key to finish installation.
-
-That's it, you're ready to start using your new computer.
+There's no second step. That's it, you're ready to start using your new computer.
 
 ### Later updates
 
