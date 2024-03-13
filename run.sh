@@ -49,7 +49,7 @@ echo "Installation of Node development tools"
 npm install -g npm-check-updates
 
 # -----------------------------------------------------------------------------
-# Configuration
+# macOS configuration
 # -----------------------------------------------------------------------------
 
 echo "Setting some default parameters"
@@ -241,6 +241,28 @@ defaults write com.apple.screencapture type -string "png"
 # Enable shadows in screenshots
 defaults write com.apple.screencapture disable-shadow -bool false
 
+# Saving screenshots to the Downloads folder
+defaults write com.apple.screencapture location -string "$HOME/Downloads"
+
+# -----------------------------------------------------------------------------
+# Other configurations
+# -----------------------------------------------------------------------------
+
+echo "dnsmasq configuration"
+# http://passingcuriosity.com/2013/dnsmasq-dev-osx/
+if [ ! -e "/usr/local/etc/dnsmasq.conf" ]; then
+  echo 'address=/.test/127.0.0.1' >> $(brew --prefix)/etc/dnsmasq.conf
+  sudo brew services start dnsmasq
+fi
+
+# Change npm's config so it uses ^ (minor versions) by default when saving dependencies
+echo "npm configuration"
+npm config set save-prefix '^'
+
+echo "git configuration"
+echo "git configuration"
+git config --global init.defaultBranch main
+
 echo "Restarting Finder and Dock. You'll need to restart the computer to complete."
 killall Dock
 killall Finder
@@ -251,4 +273,3 @@ rm -f -r /Library/Caches/Homebrew/*
 
 echo ""
 echo "ET VOILÀ !"
-echo "Once you have synchronized your Synology Drive data (initially only the "Settings" folder is required), run the post-cloud.sh script"
