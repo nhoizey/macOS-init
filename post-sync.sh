@@ -7,10 +7,10 @@
 echo "Restoring preferences synced with Mackup on Synology Drive"
 # Default Mackup sync engine is Dropbox:
 # https://github.com/lra/mackup/blob/master/doc/README.md
-echo -e "[storage]\nengine = file_system\npath = Synology/Personnel" >> ~/.mackup.cfg
+# echo -e "[storage]\nengine = file_system\npath = Synology/Personnel" >> ~/.mackup.cfg
 
 # Backup recovery without having to request authorisation each time
-mackup restore -n
+# mackup restore -n
 
 # Saving screenshots to Synology Drive
 defaults write com.apple.screencapture location -string "$HOME/Synology/Personnel/Captures"
