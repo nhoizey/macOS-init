@@ -6,7 +6,6 @@
 
 # Inspirations:
 # https://github.com/nicolinuxfr/macOS-post-installation
-# https://www.macg.co/logiciels/2017/02/comment-synchroniser-les-preferences-des-apps-avec-mackup-97442
 # https://github.com/OzzyCzech/dotfiles/blob/master/.osx
 
 echo "Asking the the administrator password upfront"
@@ -33,7 +32,7 @@ echo "Installing Synology Drive first to start settings synchronization"
 brew install synology-drive
 
 echo "Running Synology Drive"
-echo "ℹ️ Personal folder (in which Mackup is) should be '~/Synology/Personnel/'"
+echo "ℹ️ Personal folder should be '~/Synology/Personnel/'"
 open -a "Synology Drive Client"
 
 echo "Installing most applications with Homebrew and Mac App Store CLI"
@@ -252,4 +251,4 @@ rm -f -r /Library/Caches/Homebrew/*
 
 echo ""
 echo "ET VOILÀ !"
-echo "Once you have synchronized your Synology Drive data (initially only the "Mackup" and "Settings" folders are required), run the post-cloud.sh script"
+echo "Once you have synchronized your Synology Drive data (initially only the "Settings" folder is required), run the post-cloud.sh script"
