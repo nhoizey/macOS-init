@@ -5,7 +5,7 @@
 
 This set of scripts automate the installation of applications and synchronization of settings, on a freshly installed macOS.
 
-> [WARNING]
+> [!CAUTION]
 > This script was designed for **my own specific needs**.
 > Before using it, remember to modify it to suit your needs!
 
