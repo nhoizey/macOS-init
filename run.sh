@@ -28,13 +28,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 echo "Update the list of applications available with Homebrew"
 brew update
 
-echo "Installing Synology Drive first to start settings synchronization"
-brew install synology-drive
-
-echo "Running Synology Drive"
-echo "ℹ️ Personal folder should be '~/Synology/Personnel/'"
-open -a "Synology Drive Client"
-
 echo "Installing most applications with Homebrew and Mac App Store CLI"
 brew bundle
 
@@ -259,7 +252,6 @@ fi
 echo "npm configuration"
 npm config set save-prefix '^'
 
-echo "git configuration"
 echo "git configuration"
 git config --global init.defaultBranch main
 

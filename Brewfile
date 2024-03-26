@@ -49,7 +49,6 @@ cask 'iterm2'
 
 # UI and usage
 brew 'glance-chamburr'
-cask 'barrier'
 cask 'raycast'
 cask 'setapp'
 cask 'swiftdefaultappsprefpane'
@@ -118,7 +117,6 @@ mas 'Slack', id: 803453959
 mas 'Ivory for Mastodon by Tapbots', id: 6444602274
 
 # Office and productivity
-cask 'macdown'
 cask 'microsoft-teams'
 cask 'netnewswire'
 cask 'obsidian'
