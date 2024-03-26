@@ -5,7 +5,7 @@
 
 This set of scripts automate the installation of applications and synchronization of settings, on a freshly installed macOS.
 
-> **Warning**
+> [WARNING]
 > This script was designed for **my own specific needs**.
 > Before using it, remember to modify it to suit your needs!
 
@@ -20,7 +20,6 @@ This set of scripts automate the installation of applications and synchronizatio
 
 1. Download the latest version: [main.zip](https://github.com/nhoizey/macOS-init/archive/main.zip)
 1. Open the `run.sh` and `Brewfile` files, and change what is installed by default
-1. Change the `brew install synology-drive` and `open -a Synology Drive Client` lines in [`post-install.sh`](https://github.com/nhoizey/macOS-init/blob/main/run.sh) depending on the Cloud service you are using
 1. Starting from the line `# Configuration` in the `run.sh` file, the script configures a number of default settings, which you can modify as required
 1. Then [open macOS terminal](https://www.wikihow.tech/Use-Terminal-on-Mac#Opening-Terminal), drag and drop the `run.sh` file from the Finder to the Terminal, press the <kbd>Enter</kbd> key, and fasten your seatbelt… 😁
 
