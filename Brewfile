@@ -52,6 +52,7 @@ brew 'glance-chamburr'
 cask 'raycast'
 cask 'setapp'
 cask 'swiftdefaultappsprefpane'
+cask 'syntax-highlight'
 mas 'Amphetamine', id: 937984704
 
 # Misc utilities
