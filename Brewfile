@@ -49,6 +49,7 @@ cask 'iterm2'
 
 # UI and usage
 brew 'glance-chamburr'
+cask 'qlmarkdown'
 cask 'raycast'
 cask 'setapp'
 cask 'swiftdefaultappsprefpane'
