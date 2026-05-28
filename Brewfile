@@ -50,7 +50,7 @@ cask 'iterm2'
 # UI and usage
 brew 'glance-chamburr'
 cask 'qlmarkdown'
-cask 'raycast'
+# cask 'raycast'
 cask 'setapp'
 cask 'swiftdefaultappsprefpane'
 cask 'syntax-highlight'
@@ -62,21 +62,21 @@ cask '1password'
 cask 'deepl'
 cask 'enca'
 cask 'jq'
-cask 'keeper-password-manager'
+# cask 'keeper-password-manager'
 cask 'grandperspective'
-cask 'screenflow9'
+# cask 'screenflow9'
 cask 'yemuzip'
 
 # Backup and sync
 cask 'backblaze'
 cask 'carbon-copy-cloner'
 cask 'dropbox'
-cask 'google-drive-file-stream'
+# cask 'google-drive-file-stream'
 
 # Web
 cask 'firefox'
-cask 'google-chrome'
-cask 'google-chrome-canary'
+# cask 'google-chrome'
+# cask 'google-chrome-canary'
 
 # Development
 brew 'git'
@@ -99,14 +99,14 @@ cask 'imageoptim'
 # Videos
 brew 'ffmpeg'
 brew 'yt-dlp'
-cask 'autosubsync'
+# cask 'autosubsync'
 cask 'catch'
 cask 'handbrake'
-cask 'losslesscut'
-cask 'mkvtoolnix'
+# cask 'losslesscut'
+# cask 'mkvtoolnix'
 cask 'plex'
 cask 'subler'
-cask 'subsmarine'
+# cask 'subsmarine'
 cask 'vlc'
 
 # Photo
@@ -115,11 +115,11 @@ cask 'adobe-creative-cloud'
 # Communication
 cask 'signal'
 cask 'whatsapp'
-mas 'Slack', id: 803453959
+# mas 'Slack', id: 803453959
 mas 'Ivory for Mastodon by Tapbots', id: 6444602274
 
 # Office and productivity
-cask 'microsoft-teams'
+# cask 'microsoft-teams'
 cask 'netnewswire'
 cask 'obsidian'
 
@@ -156,7 +156,7 @@ vscode "moshfeu.compare-folders"
 vscode "mrmlnc.vscode-duplicate"
 
 # Git tools
-vscode "eamodio.gitlens"
+# vscode "eamodio.gitlens"
 
 # npm tools
 vscode "wix.vscode-import-cost"
@@ -164,34 +164,34 @@ vscode "christian-kohler.npm-intellisense"
 vscode "pflannery.vscode-versionlens"
 
 # File formats/colorizer
-vscode "tamasfe.even-better-toml"
+# vscode "tamasfe.even-better-toml"
 vscode "mrmlnc.vscode-apache"
 vscode "sharat.vscode-brewfile"
 vscode "github.vscode-github-actions"
 vscode "mikestead.dotenv"
 vscode "ronnidc.nunjucks"
 vscode "SomewhatStationery.some-sass"
-vscode "joshbolduc.story-explorer"
+# vscode "joshbolduc.story-explorer"
 vscode "jock.svg"
 
 # Markdown tools
 vscode "shd101wyy.markdown-preview-enhanced"
 vscode "darkriszty.markdown-table-prettify"
 vscode "DavidAnson.vscode-markdownlint"
-vscode "unifiedjs.vscode-mdx"
+# vscode "unifiedjs.vscode-mdx"
 
 # Noctis Theme
 vscode "liviuschera.noctis"
 
 # Code formater/beautifier
-vscode "esbenp.prettier-vscode"
+# vscode "esbenp.prettier-vscode"
 vscode "mohsen1.prettify-json"
-vscode "stylelint.vscode-stylelint"
+# vscode "stylelint.vscode-stylelint"
 
 # Miscelanous
 vscode "oderwat.indent-rainbow"
 vscode "christian-kohler.path-intellisense"
 vscode "MohammadBaqer.better-folding"
 vscode "kamikillerto.vscode-colorize"
-vscode "GitHub.copilot"
+# vscode "GitHub.copilot"
 vscode "aaron-bond.better-comments"
