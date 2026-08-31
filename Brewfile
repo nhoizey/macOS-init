@@ -65,7 +65,6 @@ cask 'jq'
 # cask 'keeper-password-manager'
 cask 'grandperspective'
 # cask 'screenflow9'
-cask 'yemuzip'
 
 # Backup and sync
 cask 'backblaze'
